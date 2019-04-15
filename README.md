@@ -1,7 +1,7 @@
 # @ionaru/array-utils
 
 ## Description
-A package for...
+This package contains a number of utility functions for arrays.
 
 ## Usage
 ```
