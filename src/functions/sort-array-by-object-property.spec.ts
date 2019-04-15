@@ -137,7 +137,7 @@ describe('sortArrayByObjectProperty', () => {
 
         expect(() => {
             sortArrayByObjectProperty(unsortedArrayWithUndefinedValue, 'value');
-        }).toThrow(new Error('Unable to compare values \'3\' and \'undefined\''));
+        }).toThrow(/^Unable to compare values '(3|undefined)' and '(3|undefined)'$/);
     });
 
     test('Attempting to sort a string value in an array must throw an error', () => {
@@ -151,7 +151,7 @@ describe('sortArrayByObjectProperty', () => {
 
         expect(() => {
             sortArrayByObjectProperty(unsortedArrayWithStringValue, 'value');
-        }).toThrow(new Error('Unable to compare different types: \'3\' (number) and \'2\' (string)'));
+        }).toThrow(/^Unable to compare different types: '[23]' \((number|string)\) and '[23]' \((number|string)\)$/);
     });
 
     test('Sort an array with string values', () => {
