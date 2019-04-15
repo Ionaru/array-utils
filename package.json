@@ -1,7 +1,7 @@
 {
     "name": "@ionaru/array-utils",
     "version": "1.0.0",
-    "description": "A number of utility function for working with arrays.",
+    "description": "A number of utility functions for working with arrays.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "files": [
