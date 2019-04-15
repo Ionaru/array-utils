@@ -13,7 +13,7 @@ This package contains a number of utility functions for arrays.
 npm install @ionaru/array-utils
 ```
 
-### generateNumbersArray(length)
+### `generateNumbersArray(length)`
 Generates an array of numbers, starting on 1.
 
 ```js
@@ -23,7 +23,7 @@ const array = generateNumbersArray(5);
 console.log(array); // [1, 2, 3, 4, 5]
 ```
 
-### objectsArrayToObject(array, key)
+### `objectsArrayToObject(array, key)`
 Convert an array containing objects to an object containing objects.
 The value of the `key` parameter will be used as key for the objects.
 
@@ -43,7 +43,7 @@ console.log(object);
 // }
 ```
 
-### sortArrayByObjectProperty(array, property, inverse)
+### `sortArrayByObjectProperty(array, property, inverse)`
 Sort an array of object by the value in those objects.
 This function will sort the given array in-place.
 
@@ -63,7 +63,7 @@ console.log(myArray);
 // ]
 ```
 
-### uniquifyArray(array)
+### `uniquifyArray(array)`
 Filter duplicate values from an array.
 
 ```js
