@@ -7,7 +7,8 @@
 export function sortArrayByObjectProperty<T>(array: T[], property: string, inverse = false): T[] {
 
     function getPropertyFromPath(value: any): any {
-        return property.split('.').reduce((o, i) =>  o ? o[i] : o, value);
+        const getObjectValue = (object: any, key: string): any => object[key];
+        return property.split('.').reduce(getObjectValue, value);
     }
 
     function checkIfEqualTypes(left: any, right: any): void {
