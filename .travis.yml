@@ -3,3 +3,26 @@ node_js:
     - '11' # EOL: June 2019
     - '10' # EOL: April 2021
     - '8' # EOL: December 2019
+before_deploy:
+    - if [ "$TRAVIS_BRANCH" = master ] && [ "$TRAVIS_PULL_REQUEST" = false ]; then npm version prerelease --no-git-tag-version --preid "$TRAVIS_BUILD_NUMBER"; fi
+deploy:
+    - provider: npm
+      email: info@saturnserver.org
+      api_key:
+          secure: oRFzax6KRp79yQW7pVvN99Mnib32wpCH2IU2BCnGCqIIOsu0PLi+W1Ci8ahec3Lk7TgG6bJ/tziLYFFyZQJQvbsno03mY8S0QVEm6o+k63fYpaZfjA+LEWNT+2kETXd99c1kzkzuEyZh0xBa5TvEMNTUpSwJVgm9kmNZn7doGlGNMVev0KnEbuH0pz7kTQ0OigzqBrDspzA4cJjtd8Ly9WPMfcwehfGOnq47fo+tYuBiX5OQRNGjGMLGs0eQ8nv/plxGAQo6qGkkw0lQXFO6QO0XbvowRKEq7JtHsY1Z2rY85IfOSLtbrjqxn4E6ooQgTDjtZyORs0X4F0UG+MLtQNOpNGHJ4uj+xwin1kUE8qH9AnOPQACPpskOe4iIPv2YJC5mpww0T8zc8/V4dFkYE23Nf8RAw6vNMTucjtDS1AwrOSYwzQgPujK8w01GJDyx2odNyVLwpRVoejKSZt3p6mCVssSKOELJvTROWfm43vBQwlxeTvx6/jN7Zgcn8AfJp6MjRYLxqI844Xc4rHdyFaMb0jqFT9OcOIhSFLmA9xi1RKGkYlOgQVg6f4DXoJ1Hg1dTm8GN+Q1VvlxLu8oNBrkkiiAmzt4yE6bD7znNVdTTkP1NbtUWXmw1pJg2soXgIsSRMNMwVt2iWBvIKhwckfLIxtBlrDIRlHiyoFxIl1I=
+      tag: next
+      skip_cleanup: true
+      on:
+          node: 10
+          branch: master
+          repo: Ionaru/array-utils
+    - provider: npm
+      email: info@saturnserver.org
+      api_key:
+          secure: oRFzax6KRp79yQW7pVvN99Mnib32wpCH2IU2BCnGCqIIOsu0PLi+W1Ci8ahec3Lk7TgG6bJ/tziLYFFyZQJQvbsno03mY8S0QVEm6o+k63fYpaZfjA+LEWNT+2kETXd99c1kzkzuEyZh0xBa5TvEMNTUpSwJVgm9kmNZn7doGlGNMVev0KnEbuH0pz7kTQ0OigzqBrDspzA4cJjtd8Ly9WPMfcwehfGOnq47fo+tYuBiX5OQRNGjGMLGs0eQ8nv/plxGAQo6qGkkw0lQXFO6QO0XbvowRKEq7JtHsY1Z2rY85IfOSLtbrjqxn4E6ooQgTDjtZyORs0X4F0UG+MLtQNOpNGHJ4uj+xwin1kUE8qH9AnOPQACPpskOe4iIPv2YJC5mpww0T8zc8/V4dFkYE23Nf8RAw6vNMTucjtDS1AwrOSYwzQgPujK8w01GJDyx2odNyVLwpRVoejKSZt3p6mCVssSKOELJvTROWfm43vBQwlxeTvx6/jN7Zgcn8AfJp6MjRYLxqI844Xc4rHdyFaMb0jqFT9OcOIhSFLmA9xi1RKGkYlOgQVg6f4DXoJ1Hg1dTm8GN+Q1VvlxLu8oNBrkkiiAmzt4yE6bD7znNVdTTkP1NbtUWXmw1pJg2soXgIsSRMNMwVt2iWBvIKhwckfLIxtBlrDIRlHiyoFxIl1I=
+      skip_cleanup: true
+      on:
+          node: 10
+          branch: master
+          tags: true
+          repo: Ionaru/array-utils
