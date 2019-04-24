@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Support for Node.js 12
+- Support for Node.js 12.
+
+### Changed
+- Always deploy with active LTS version of Node.js.
 
 ## [1.0.0] - 2019-04-16
 ### Added
