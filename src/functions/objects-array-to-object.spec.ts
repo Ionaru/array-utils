@@ -14,4 +14,18 @@ describe('objectsArrayToObject', () => {
             threeValue: {oneKey: 'threeValue', twoKey: 'fourValue'},
         });
     });
+
+    test('Convert array to object with number keys', () => {
+        const array = [
+            {1: 'oneValue', 2: 'twoValue'},
+            {1: 'threeValue', 2: 'fourValue'},
+        ];
+
+        const result = objectsArrayToObject(array, '1');
+
+        expect(result).toEqual({
+            oneValue: {1: 'oneValue', 2: 'twoValue'},
+            threeValue: {1: 'threeValue', 2: 'fourValue'},
+        });
+    });
 });

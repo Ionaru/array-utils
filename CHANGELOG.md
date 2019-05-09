@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Support for Node.js 12.
+- Better typings for objectsArrayToObject.
+- Another test for objectsArrayToObject.
 
 ### Changed
 - Always deploy with active LTS version of Node.js.

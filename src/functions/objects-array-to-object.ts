@@ -1,9 +1,10 @@
-export function objectsArrayToObject<T>(array: any[], key: string): T {
+export function objectsArrayToObject<T>(array: T[], key: string) {
 
-    const object: any = {};
+    const object: {[index: string]: T} = {};
 
     for (const item of array) {
-        object[item[key]] = item;
+        // @ts-ignore
+        object[item[key] as string] = item;
     }
 
     return object;
