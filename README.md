@@ -13,14 +13,26 @@ This package contains a number of utility functions for arrays.
 npm install @ionaru/array-utils
 ```
 
-### `generateNumbersArray(length)`
-Generates an array of numbers, starting on 1.
+### `generateNumbersArray(length, start, step)`
+Generates an array of numbers, both "start" and "step" are optional and default to 1.
 
 ```js
 import { generateNumbersArray } from '@ionaru/array-utils';
 
 const array = generateNumbersArray(5);
 console.log(array); // [1, 2, 3, 4, 5]
+
+const array = generateNumbersArray(5, 60);
+console.log(array); // [60, 61, 62, 63, 64]
+
+const array = generateNumbersArray(5, 70, 2);
+console.log(array); // [70, 72, 74, 76, 78]
+
+const array = generateNumbersArray(5, -2);
+console.log(array); // [-2, -1, 0, 1, 2]
+
+const array = generateNumbersArray(5, -2, -3);
+console.log(array); // [-2, -5, -8, -12, -15]
 ```
 
 ### `objectsArrayToObject(array, key)`
