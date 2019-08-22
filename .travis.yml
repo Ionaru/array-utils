@@ -10,7 +10,7 @@ jobs:
         - stage: deploy
           node_js: "lts/*"
           script: skip
-          before_deploy: if [ "$TRAVIS_BRANCH" = master ] && [ "$TRAVIS_PULL_REQUEST" = false ]; then npm version prerelease --no-git-tag-version --preid "$TRAVIS_BUILD_NUMBER"; fi
+          before_deploy: if [ "$TRAVIS_BRANCH" = master ] && [ "$TRAVIS_PULL_REQUEST" = false ]; then npm version prerelease --no-git-tag-version --preid "$TRAVIS_BUILD_NUMBER" --allow-same-version; fi
           deploy:
               - provider: npm
                 email: info@saturnserver.org
