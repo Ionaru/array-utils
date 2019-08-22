@@ -31,7 +31,6 @@ jobs:
                 on:
                     branch: master
                     repo: Ionaru/array-utils
-                    tags: true
               - provider: npm
                 email: info@saturnserver.org
                 api_key:
