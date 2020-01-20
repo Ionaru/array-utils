@@ -1,4 +1,4 @@
-import { uniquifyArray } from './uniquify-array';
+import { uniquifyArray, uniquifyObjectsArray } from './uniquify-array';
 
 describe('uniquifyArray', () => {
 
@@ -28,6 +28,38 @@ describe('uniquifyArray', () => {
 
     ])('Arrays with strings', (input, expectedOutput) => {
         const output = uniquifyArray(input);
+        expect(output).toEqual(expectedOutput);
+    });
+});
+
+describe('uniquifyObjectsArray', () => {
+
+    test('Empty array', () => {
+        const output = uniquifyObjectsArray([], () => '');
+        expect(output).toEqual([]);
+    });
+
+    test.each([
+
+        [[{x: 1}, {x: 1}, {x: 1}], [{x: 1}]],
+        [[{x: 1}, {x: 2}, {x: 1}], [{x: 1}, {x: 2}]],
+        [[{x: 2}, {x: 2}, {x: 1}], [{x: 2}, {x: 1}]],
+        [[{x: 1}, {x: 2}, {x: 3}], [{x: 1}, {x: 2}, {x: 3}]],
+
+    ])('Arrays with numbers', (input, expectedOutput) => {
+        const output = uniquifyObjectsArray(input, (element) => element.x);
+        expect(output).toEqual(expectedOutput);
+    });
+
+    test.each([
+
+        [[{x: 'a'}, {x: 'a'}, {x: 'a'}], [{x: 'a'}]],
+        [[{x: 'a'}, {x: 'b'}, {x: 'a'}], [{x: 'a'}, {x: 'b'}]],
+        [[{x: 'b'}, {x: 'b'}, {x: 'a'}], [{x: 'b'}, {x: 'a'}]],
+        [[{x: 'a'}, {x: 'b'}, {x: 'c'}], [{x: 'a'}, {x: 'b'}, {x: 'c'}]],
+
+    ])('Arrays with strings', (input, expectedOutput) => {
+        const output = uniquifyObjectsArray(input, (element) => element.x);
         expect(output).toEqual(expectedOutput);
     });
 });
