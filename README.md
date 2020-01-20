@@ -88,7 +88,7 @@ console.log(uniqueArray); // [1, 2, 3, 6, 7]
 ```
 
 ### `uniquifyObjectsArray(array, attributeGetter)`
-Filter duplicate values from an array.
+Filter duplicate object attributes from an array.
 
 ```js
 import { uniquifyObjectsArray } from '@ionaru/array-utils';
@@ -106,4 +106,36 @@ console.log(uniqueArrayOnX); // [{x: 1, y: 2}, {x: 2, y: 6}, {x: 5, y: 2}, {x: 4
 
 const uniqueArrayOnY = uniquifyObjectsArray(myArray, (element) => element.y);
 console.log(uniqueArrayOnY); // [{x: 1, y: 2}, {x: 1, y: 9}, {x: 4, y: 1}]
+```
+
+### `groupArrayByObjectProperty(array, attributeGetter)`
+Filter duplicate object attributes from an array.
+
+```js
+import { groupArrayByObjectProperty } from '@ionaru/array-utils';
+
+const myArray = [
+    {x: 1, y: 2}, 
+    {x: 2, y: 9},
+    {x: 1, y: 9},
+    {x: 5, y: 2},
+    {x: 4, y: 1},
+];
+
+const uniqueArrayOnX = groupArrayByObjectProperty(myArray, (element) => element.x);
+console.log(uniqueArrayOnX);
+// {
+//     1: [{x: 1, y: 2}, {x: 1, y: 9}], 
+//     2: [{x: 2, y: 9}], 
+//     4: [{x: 4, y: 1}], 
+//     5: [{x: 5, y: 2}]
+// };
+
+const uniqueArrayOnY = uniquifyObjectsArray(myArray, (element) => element.y);
+console.log(uniqueArrayOnY);
+// {
+//     1: [{x: 4, y: 1}],
+//     2: [{x: 1, y: 2}, {x: 5, y: 2}],
+//     9: [{x: 2, y: 9}, {x: 1, y: 9}]
+// };
 ```
