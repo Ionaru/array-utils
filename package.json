@@ -35,14 +35,14 @@
     "repository": "github:Ionaru/array-utils",
     "license": "MIT",
     "devDependencies": {
-        "@types/jest": "^24.0.23",
-        "@types/node": "^12.12.7",
+        "@types/jest": "^24.9.0",
+        "@types/node": "^13.1.8",
         "codecov": "^3.6.1",
         "jest": "^24.9.0",
-        "ts-jest": "^24.1.0",
-        "tslint": "^5.20.1",
+        "ts-jest": "^24.3.0",
+        "tslint": "^6.0.0",
         "tslint-sonarts": "1.9.0",
-        "typescript": "^3.7.2"
+        "typescript": "^3.7.5"
     },
     "dependencies": {}
 }
