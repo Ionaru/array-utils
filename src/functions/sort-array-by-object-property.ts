@@ -4,14 +4,14 @@
  * @param property - The property name to sort by. (can be property.property)
  * @param inverse - Inverse the output (descending).
  */
-export function sortArrayByObjectProperty<T>(array: T[], property: string, inverse = false): T[] {
+export const sortArrayByObjectProperty = <T>(array: T[], property: string, inverse = false): T[] => {
 
-    function getPropertyFromPath(value: any): any {
+    const getPropertyFromPath = (value: any): any => {
         const getObjectValue = (object: any, key: string): any => object[key];
         return property.split('.').reduce(getObjectValue, value);
-    }
+    };
 
-    function checkIfEqualTypes(left: any, right: any): void {
+    const checkIfEqualTypes = (left: any, right: any): void => {
         if (left === undefined || right === undefined) {
             throw new Error(`Unable to compare values '${left}' and '${right}'`);
         }
@@ -19,7 +19,7 @@ export function sortArrayByObjectProperty<T>(array: T[], property: string, inver
         if (typeof left !== typeof right) {
             throw new Error(`Unable to compare different types: '${left}' (${typeof left}) and '${right}' (${typeof right})`);
         }
-    }
+    };
 
     const compare = (a: any, b: any) => {
         let left = getPropertyFromPath(a);
@@ -43,4 +43,4 @@ export function sortArrayByObjectProperty<T>(array: T[], property: string, inver
     };
 
     return array.sort(compare);
-}
+};

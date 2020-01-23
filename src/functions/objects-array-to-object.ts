@@ -1,4 +1,4 @@
-export function objectsArrayToObject<T>(array: T[], key: string) {
+export const objectsArrayToObject = <T>(array: T[], key: string) => {
 
     const object: {[index: string]: T} = {};
 
@@ -8,4 +8,4 @@ export function objectsArrayToObject<T>(array: T[], key: string) {
     }
 
     return object;
-}
+};

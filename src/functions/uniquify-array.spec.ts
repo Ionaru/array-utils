@@ -2,12 +2,13 @@ import { uniquifyArray, uniquifyObjectsArray } from './uniquify-array';
 
 describe('uniquifyArray', () => {
 
-    test('Empty array', () => {
+    it('empty array', () => {
+        expect.assertions(1);
         const output = uniquifyArray([]);
-        expect(output).toEqual([]);
+        expect(output).toStrictEqual([]);
     });
 
-    test.each([
+    it.each([
 
         [[1, 1, 1], [1]],
         [[1, 2, 1], [1, 2]],
@@ -16,10 +17,10 @@ describe('uniquifyArray', () => {
 
     ])('Arrays with numbers', (input, expectedOutput) => {
         const output = uniquifyArray(input);
-        expect(output).toEqual(expectedOutput);
+        expect(output).toStrictEqual(expectedOutput);
     });
 
-    test.each([
+    it.each([
 
         [['a', 'a', 'a'], ['a']],
         [['a', 'b', 'a'], ['a', 'b']],
@@ -28,18 +29,19 @@ describe('uniquifyArray', () => {
 
     ])('Arrays with strings', (input, expectedOutput) => {
         const output = uniquifyArray(input);
-        expect(output).toEqual(expectedOutput);
+        expect(output).toStrictEqual(expectedOutput);
     });
 });
 
 describe('uniquifyObjectsArray', () => {
 
-    test('Empty array', () => {
+    it('empty array', () => {
+        expect.assertions(1);
         const output = uniquifyObjectsArray([], () => '');
-        expect(output).toEqual([]);
+        expect(output).toStrictEqual([]);
     });
 
-    test.each([
+    it.each([
 
         [[{x: 1}, {x: 1}, {x: 1}], [{x: 1}]],
         [[{x: 1}, {x: 2}, {x: 1}], [{x: 1}, {x: 2}]],
@@ -48,10 +50,10 @@ describe('uniquifyObjectsArray', () => {
 
     ])('Arrays with numbers', (input, expectedOutput) => {
         const output = uniquifyObjectsArray(input, (element) => element.x);
-        expect(output).toEqual(expectedOutput);
+        expect(output).toStrictEqual(expectedOutput);
     });
 
-    test.each([
+    it.each([
 
         [[{x: 'a'}, {x: 'a'}, {x: 'a'}], [{x: 'a'}]],
         [[{x: 'a'}, {x: 'b'}, {x: 'a'}], [{x: 'a'}, {x: 'b'}]],
@@ -60,6 +62,6 @@ describe('uniquifyObjectsArray', () => {
 
     ])('Arrays with strings', (input, expectedOutput) => {
         const output = uniquifyObjectsArray(input, (element) => element.x);
-        expect(output).toEqual(expectedOutput);
+        expect(output).toStrictEqual(expectedOutput);
     });
 });

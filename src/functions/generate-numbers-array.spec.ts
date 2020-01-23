@@ -1,7 +1,7 @@
 import { generateNumbersArray } from './generate-numbers-array';
 
 describe('generateNumbersArray', () => {
-    test.each([
+    it.each([
         [0, []],
         [1, [1]],
         [2, [1, 2]],
@@ -9,10 +9,10 @@ describe('generateNumbersArray', () => {
         [10, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
     ])('An array with length %p', (length, expectedResult) => {
         const result = generateNumbersArray(length as number);
-        expect(result).toEqual(expectedResult);
+        expect(result).toStrictEqual(expectedResult);
     });
 
-    test.each([
+    it.each([
         [[10, 1, 1], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
         [[10, 0, 2], [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]],
         [[10, 1, 2], [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]],
@@ -39,10 +39,10 @@ describe('generateNumbersArray', () => {
 
     ])('An array with params %p', (params, expectedResult) => {
         const result = generateNumbersArray(params[0], params[1], params[2]);
-        expect(result).toEqual(expectedResult);
+        expect(result).toStrictEqual(expectedResult);
     });
 
-    test.each([
+    it.each([
         -1, 1.5, Infinity,
     ])('Bad input: %p', (length) => {
         expect(() => generateNumbersArray(length)).toThrow('Invalid array length');

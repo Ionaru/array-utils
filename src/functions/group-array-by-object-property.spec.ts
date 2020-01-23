@@ -11,10 +11,11 @@ describe('groupArrayByObjectProperty', () => {
         {a: 3, b: '0', c: 't'},
     ];
 
-    test('On A', () => {
+    it('on A', () => {
+        expect.assertions(1);
         const result = groupArrayByObjectProperty(array, (element) => element.a);
 
-        expect(result).toEqual({
+        expect(result).toStrictEqual({
             1: [
                 {a: 1, b: '2', c: 'e'},
                 {a: 1, b: '2', c: 'e'},
@@ -30,10 +31,11 @@ describe('groupArrayByObjectProperty', () => {
         });
     });
 
-    test('On B', () => {
+    it('on B', () => {
+        expect.assertions(1);
         const result = groupArrayByObjectProperty(array, (element) => element.b);
 
-        expect(result).toEqual({
+        expect(result).toStrictEqual({
             0: [
                 {a: 2, b: '0', c: 'x'},
                 {a: 1, b: '0', c: 'c'},
@@ -47,10 +49,11 @@ describe('groupArrayByObjectProperty', () => {
         });
     });
 
-    test('On C', () => {
+    it('on C', () => {
+        expect.assertions(1);
         const result = groupArrayByObjectProperty(array, (element) => element.c);
 
-        expect(result).toEqual({
+        expect(result).toStrictEqual({
             c: [
                 {a: 1, b: '0', c: 'c'},
             ],
