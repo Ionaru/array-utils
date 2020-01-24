@@ -15,14 +15,13 @@
             "esnext",
             "es2020",
             "es2019",
-            "es2018",
-            "es2017"
+            "es2018"
         ],
         "module": "commonjs",
         "moduleResolution": "node",
         "outDir": "dist",
         "sourceMap": true,
-        "target": "es2016",
+        "target": "es2017",
         "typeRoots": [
             "node_modules/@types"
         ]
