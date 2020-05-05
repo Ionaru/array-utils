@@ -6,11 +6,10 @@
 export const groupArrayByObjectProperty = <T extends any, K extends keyof T>(
     array: T[], attributeGetter: (item: T) => number | string,
 ): Record<T[K], T[]> => array.reduce(
-    (previous, current) => {
-        const value = attributeGetter(current);
-        previous[value] = (previous[value] || []).concat(current);
-        return previous;
-    },
-    // tslint:disable-next-line:no-object-literal-type-assertion
+        (previous, current) => {
+            const value = attributeGetter(current);
+            previous[value] = (previous[value] || []).concat(current);
+            return previous;
+        },
     {} as Record<T[K], T[]>,
-);
+    );
