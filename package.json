@@ -1,6 +1,6 @@
 {
     "name": "@ionaru/array-utils",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "A number of utility functions for working with arrays.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -35,22 +35,22 @@
     "repository": "github:Ionaru/array-utils",
     "license": "MIT",
     "devDependencies": {
-        "@ionaru/eslint-config": "0.0.2",
-        "@types/jest": "^24.9.1",
-        "@types/node": "^13.5.0",
-        "@typescript-eslint/eslint-plugin": "^2.17.0",
-        "@typescript-eslint/eslint-plugin-tslint": "^2.17.0",
+        "@ionaru/eslint-config": "^1.0.3",
+        "@types/jest": "^25.2.2",
+        "@types/node": "^14.0.1",
+        "@typescript-eslint/eslint-plugin": "^2.33.0",
+        "@typescript-eslint/eslint-plugin-tslint": "^2.33.0",
         "codecov": "^3.6.2",
-        "eslint": "^6.8.0",
-        "eslint-plugin-import": "^2.20.0",
-        "eslint-plugin-jest": "^23.6.0",
+        "eslint": "^7.0.0",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jest": "^23.13.1",
         "eslint-plugin-no-null": "^1.0.2",
-        "eslint-plugin-prefer-arrow": "^1.1.7",
+        "eslint-plugin-prefer-arrow": "^1.2.1",
         "eslint-plugin-sonarjs": "^0.5.0",
-        "jest": "^25.1.0",
-        "ts-jest": "^25.0.0",
-        "tslint": "^6.0.0",
-        "typescript": "^3.7.5"
+        "jest": "^26.0.1",
+        "ts-jest": "^26.0.0",
+        "tslint": "^6.1.2",
+        "typescript": "^3.9.2"
     },
     "dependencies": {}
 }

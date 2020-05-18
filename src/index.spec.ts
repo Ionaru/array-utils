@@ -7,11 +7,17 @@ import {
     uniquifyObjectsArray,
 } from './index';
 
-test('exports', () => {
-    expect(generateNumbersArray).toBeTruthy();
-    expect(objectsArrayToObject).toBeTruthy();
-    expect(sortArrayByObjectProperty).toBeTruthy();
-    expect(uniquifyArray).toBeTruthy();
-    expect(uniquifyObjectsArray).toBeTruthy();
-    expect(groupArrayByObjectProperty).toBeTruthy();
+describe('export tests', () => {
+
+    it('must export functions', () => {
+        expect.assertions(6);
+
+        expect(typeof generateNumbersArray).toBe('function');
+        expect(typeof objectsArrayToObject).toBe('function');
+        expect(typeof sortArrayByObjectProperty).toBe('function');
+        expect(typeof uniquifyArray).toBe('function');
+        expect(typeof uniquifyObjectsArray).toBe('function');
+        expect(typeof groupArrayByObjectProperty).toBe('function');
+    });
 });
+
