@@ -184,6 +184,7 @@ describe('sortArrayByObjectProperty', () => {
         ];
 
         expect(() => {
+            // @ts-expect-error
             sortArrayByObjectProperty(unsortedArrayWithUndefinedValue, (element) => element.value);
         }).toThrow(/^Unable to compare values '(3|undefined)' and '(3|undefined)'$/);
     });

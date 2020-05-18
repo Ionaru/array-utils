@@ -1,3 +1,5 @@
+type sortableProperty = string | number | Date;
+
 /**
  * Sort an array of objects by one of the object's properties (in-place).
  * @param array - The array to sort.
@@ -5,7 +7,7 @@
  * @param inverse - Inverse the output (descending).
  */
 // eslint-disable-next-line max-len,sonarjs/cognitive-complexity
-export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: string | ((item: T) => string | number | undefined), inverse = false): T[] => {
+export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: string | ((item: T) => sortableProperty), inverse = false): T[] => {
 
     let propertyIsString = false;
     if (typeof attributeGetter === 'string') {
