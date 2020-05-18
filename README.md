@@ -55,7 +55,7 @@ console.log(object);
 // }
 ```
 
-### `sortArrayByObjectProperty(array, property, inverse)`
+### `sortArrayByObjectProperty(array, attributeGetter, inverse)`
 Sort an array of object by the value in those objects.
 This function will sort the given array in-place.
 
@@ -67,7 +67,7 @@ const myArray = [
     {item: 'def', price: 10},
 ];
 
-sortArrayByObjectProperty(myArray, 'price');
+sortArrayByObjectProperty(myArray, (element) => element.price);
 console.log(myArray);
 // [
 //     {item: 'def', price: 10},
