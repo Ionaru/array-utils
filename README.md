@@ -35,9 +35,9 @@ const array = generateNumbersArray(5, -2, -3);
 console.log(array); // [-2, -5, -8, -12, -15]
 ```
 
-### `objectsArrayToObject(array, key)`
+### `objectsArrayToObject(array, attributeGetter)`
 Convert an array containing objects to an object containing objects.
-The value of the `key` parameter will be used as key for the objects.
+The return value of the `attributeGetter` parameter will be used as key for the objects.
 
 ```js
 import { objectsArrayToObject } from '@ionaru/array-utils';
@@ -47,7 +47,7 @@ const myArray = [
     {item: 'def', price: 10},
 ];
 
-const object = objectsArrayToObject(myArray, 'item');
+const object = objectsArrayToObject(myArray, (element) => element.item);
 console.log(object);
 // {
 //     abc: {item: 'abc', price: 15},
