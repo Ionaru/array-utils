@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-identical-functions */
 import { uniquifyArray, uniquifyObjectsArray } from './uniquify-array';
 
 describe('uniquifyArray', () => {
@@ -15,7 +16,8 @@ describe('uniquifyArray', () => {
         [[2, 2, 1], [2, 1]],
         [[1, 2, 3], [1, 2, 3]],
 
-    ])('Arrays with numbers', (input, expectedOutput) => {
+    ])('arrays with numbers', (input, expectedOutput) => {
+        expect.assertions(1);
         const output = uniquifyArray(input);
         expect(output).toStrictEqual(expectedOutput);
     });
@@ -27,7 +29,8 @@ describe('uniquifyArray', () => {
         [['b', 'b', 'a'], ['b', 'a']],
         [['a', 'b', 'c'], ['a', 'b', 'c']],
 
-    ])('Arrays with strings', (input, expectedOutput) => {
+    ])('arrays with strings', (input, expectedOutput) => {
+        expect.assertions(1);
         const output = uniquifyArray(input);
         expect(output).toStrictEqual(expectedOutput);
     });
@@ -48,7 +51,8 @@ describe('uniquifyObjectsArray', () => {
         [[{x: 2}, {x: 2}, {x: 1}], [{x: 2}, {x: 1}]],
         [[{x: 1}, {x: 2}, {x: 3}], [{x: 1}, {x: 2}, {x: 3}]],
 
-    ])('Arrays with numbers', (input, expectedOutput) => {
+    ])('arrays with numbers', (input, expectedOutput) => {
+        expect.assertions(1);
         const output = uniquifyObjectsArray(input, (element) => element.x);
         expect(output).toStrictEqual(expectedOutput);
     });
@@ -60,7 +64,8 @@ describe('uniquifyObjectsArray', () => {
         [[{x: 'b'}, {x: 'b'}, {x: 'a'}], [{x: 'b'}, {x: 'a'}]],
         [[{x: 'a'}, {x: 'b'}, {x: 'c'}], [{x: 'a'}, {x: 'b'}, {x: 'c'}]],
 
-    ])('Arrays with strings', (input, expectedOutput) => {
+    ])('arrays with strings', (input, expectedOutput) => {
+        expect.assertions(1);
         const output = uniquifyObjectsArray(input, (element) => element.x);
         expect(output).toStrictEqual(expectedOutput);
     });

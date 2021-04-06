@@ -7,7 +7,8 @@ describe('generateNumbersArray', () => {
         [2, [1, 2]],
         [5, [1, 2, 3, 4, 5]],
         [10, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-    ])('An array with length %p', (length, expectedResult) => {
+    ])('an array with length %p', (length, expectedResult) => {
+        expect.assertions(1);
         const result = generateNumbersArray(length as number);
         expect(result).toStrictEqual(expectedResult);
     });
@@ -37,14 +38,16 @@ describe('generateNumbersArray', () => {
         [[5, -2], [-2, -1, 0, 1, 2]],
         [[5, -2, -3], [-2, -5, -8, -11, -14]],
 
-    ])('An array with params %p', (params, expectedResult) => {
+    ])('an array with params %p', (params, expectedResult) => {
+        expect.assertions(1);
         const result = generateNumbersArray(params[0], params[1], params[2]);
         expect(result).toStrictEqual(expectedResult);
     });
 
     it.each([
         -1, 1.5, Infinity,
-    ])('Bad input: %p', (length) => {
+    ])('bad input: %p', (length) => {
+        expect.assertions(1);
         expect(() => generateNumbersArray(length)).toThrow('Invalid array length');
     });
 });

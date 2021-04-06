@@ -1,45 +1,5 @@
 import { sortArrayByObjectProperty } from './sort-array-by-object-property';
 
-describe('sortArrayByObjectProperty DEPRECATED', () => {
-
-    let consoleSpy: jest.SpyInstance;
-
-    beforeEach(() => {
-        consoleSpy = jest.spyOn(console, 'warn').mockImplementation();
-    });
-
-    afterEach(() => {
-        consoleSpy.mockRestore();
-    });
-
-    it('sorting an array by object property', () => {
-        expect.assertions(3);
-
-        const unsortedArray = [
-            {value: 2},
-            {value: 3},
-            {value: 0},
-            {value: 4},
-            {value: 1},
-        ];
-
-        const sortedArray = sortArrayByObjectProperty(unsortedArray, 'value');
-
-        expect(sortedArray).toStrictEqual([
-            {value: 0},
-            {value: 1},
-            {value: 2},
-            {value: 3},
-            {value: 4},
-        ]);
-
-        expect(consoleSpy).toHaveBeenCalledTimes(1);
-        expect(consoleSpy).toHaveBeenCalledWith(
-            'Using sortArrayByObjectProperty(T[], string, boolean) is deprecated, use a selector function as the second parameter.'
-        );
-    });
-});
-
 describe('sortArrayByObjectProperty', () => {
     const unsortedArray = [
         {value: 2},
@@ -184,7 +144,7 @@ describe('sortArrayByObjectProperty', () => {
         ];
 
         expect(() => {
-            // @ts-expect-error
+            // @ts-expect-error Should throw an error.
             sortArrayByObjectProperty(unsortedArrayWithUndefinedValue, (element) => element.value);
         }).toThrow(/^Unable to compare values '(3|undefined)' and '(3|undefined)'$/);
     });

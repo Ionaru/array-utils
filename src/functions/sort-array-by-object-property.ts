@@ -3,23 +3,10 @@ type sortableProperty = string | number | Date;
 /**
  * Sort an array of objects by one of the object's properties (in-place).
  * @param array - The array to sort.
- * @param attributeGetter - The property name to sort by. (can be property.property)
+ * @param attributeGetter - A function to fetch the property from the object.
  * @param inverse - Inverse the output (descending).
  */
-// eslint-disable-next-line max-len,sonarjs/cognitive-complexity
-export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: string | ((item: T) => sortableProperty), inverse = false): T[] => {
-
-    let propertyIsString = false;
-    if (typeof attributeGetter === 'string') {
-        // eslint-disable-next-line no-console,max-len
-        console.warn('Using sortArrayByObjectProperty(T[], string, boolean) is deprecated, use a selector function as the second parameter.');
-        propertyIsString = true;
-    }
-
-    const getPropertyFromPath = (value: any): any => {
-        const getObjectValue = (object: any, key: string): any => object[key];
-        return (attributeGetter as string).split('.').reduce(getObjectValue, value);
-    };
+export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: (item: T) => sortableProperty, inverse = false): T[] => {
 
     const checkIfEqualTypes = (left: any, right: any): void => {
         if (left === undefined || right === undefined) {
@@ -32,10 +19,8 @@ export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: string
     };
 
     const compare = (a: any, b: any) => {
-        // @ts-ignore
-        let left = propertyIsString ? getPropertyFromPath(a) : attributeGetter(a);
-        // @ts-ignore
-        let right = propertyIsString ? getPropertyFromPath(b) : attributeGetter(b);
+        let left = attributeGetter(a);
+        let right = attributeGetter(b);
 
         checkIfEqualTypes(left, right);
 

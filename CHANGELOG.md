@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### BREAKING CHANGES
 - sortArrayByObjectProperty no longer accepts 'undefined' as sortable attribute.
+- Removed deprecated functionality from objectsArrayToObject.
+- Removed deprecated functionality from sortArrayByObjectProperty.
 
 ### Added
 - 'Date' as a sortable attribute for sortArrayByObjectProperty.
