@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - 'Date' as a sortable attribute for sortArrayByObjectProperty.
+- `getNumberEnumKeys` for getting the key names from a Typescript enum.
+- `getNumberEnumValues` for getting the values from a Typescript enum.
 
 ## [3.2.0] - 2020-05-18
 ### Changed
