@@ -129,7 +129,7 @@ console.log(uniqueArrayOnX);
 //     2: [{x: 2, y: 9}], 
 //     4: [{x: 4, y: 1}], 
 //     5: [{x: 5, y: 2}]
-// };
+// }
 
 const uniqueArrayOnY = uniquifyObjectsArray(myArray, (element) => element.y);
 console.log(uniqueArrayOnY);
@@ -137,5 +137,47 @@ console.log(uniqueArrayOnY);
 //     1: [{x: 4, y: 1}],
 //     2: [{x: 1, y: 2}, {x: 5, y: 2}],
 //     9: [{x: 2, y: 9}, {x: 1, y: 9}]
-// };
+// }
+```
+
+### `getNumberEnumKeys(numberEnum)`
+Get the key names from a Typescript number-Enum.
+
+```ts
+import { getNumberEnumKeys } from '@ionaru/array-utils';
+
+enum MyEnum {
+    ZERO,
+    ONE,
+    TWO,
+}
+
+const enumKeys = getNumberEnumKeys(MyEnum);
+console.log(enumKeys);
+// [
+//     'ZERO',
+//     'ONE',
+//     'TWO',
+// ]
+```
+
+### `getNumberEnumValues(numberEnum)`
+Get the values from a Typescript number-Enum.
+
+```ts
+import { getNumberEnumValues } from '@ionaru/array-utils';
+
+enum MyEnum {
+    ZERO,
+    ONE,
+    TWO,
+}
+
+const enumValues = getNumberEnumValues(MyEnum);
+console.log(enumValues);
+// [
+//     0,
+//     1,
+//     2,
+// ]
 ```
