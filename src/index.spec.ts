@@ -1,23 +1,18 @@
-import {
-    generateNumbersArray,
-    groupArrayByObjectProperty,
-    objectsArrayToObject,
-    sortArrayByObjectProperty,
-    uniquifyArray,
-    uniquifyObjectsArray,
-} from './index';
+import * as index from './index';
 
 describe('export tests', () => {
 
     it('must export functions', () => {
-        expect.assertions(6);
+        expect.assertions(9);
 
-        expect(typeof generateNumbersArray).toBe('function');
-        expect(typeof objectsArrayToObject).toBe('function');
-        expect(typeof sortArrayByObjectProperty).toBe('function');
-        expect(typeof uniquifyArray).toBe('function');
-        expect(typeof uniquifyObjectsArray).toBe('function');
-        expect(typeof groupArrayByObjectProperty).toBe('function');
+        expect(Object.entries(index)).toHaveLength(8);
+        expect(typeof index.generateNumbersArray).toBe('function');
+        expect(typeof index.objectsArrayToObject).toBe('function');
+        expect(typeof index.sortArrayByObjectProperty).toBe('function');
+        expect(typeof index.uniquifyArray).toBe('function');
+        expect(typeof index.uniquifyObjectsArray).toBe('function');
+        expect(typeof index.groupArrayByObjectProperty).toBe('function');
+        expect(typeof index.getNumberEnumValues).toBe('function');
+        expect(typeof index.getNumberEnumKeys).toBe('function');
     });
 });
-
