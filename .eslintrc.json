@@ -12,6 +12,8 @@
         "plugin:jest/all"
     ],
     "rules": {
-        "jest/no-hooks": "off"
+        "jest/no-hooks": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": ["error", "always", {"ignorePackages": true}]
     }
 }

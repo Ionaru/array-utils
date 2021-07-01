@@ -1,4 +1,4 @@
-/* eslint-disable sonarjs/no-identical-functions */
+/* eslint-disable sonarjs/no-identical-functions,import/extensions */
 import { uniquifyArray, uniquifyObjectsArray } from './uniquify-array';
 
 describe('uniquifyArray', () => {
