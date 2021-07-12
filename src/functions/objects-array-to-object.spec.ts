@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { objectsArrayToObject } from './objects-array-to-object';
 
 describe('objectsArrayToObject', () => {

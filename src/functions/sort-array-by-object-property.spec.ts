@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { sortArrayByObjectProperty } from './sort-array-by-object-property';
 
 describe('sortArrayByObjectProperty', () => {

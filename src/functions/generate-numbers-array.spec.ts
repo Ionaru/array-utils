@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { generateNumbersArray } from './generate-numbers-array';
 
 describe('generateNumbersArray', () => {

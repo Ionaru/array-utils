@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { groupArrayByObjectProperty } from './group-array-by-object-property';
 
 describe('groupArrayByObjectProperty', () => {

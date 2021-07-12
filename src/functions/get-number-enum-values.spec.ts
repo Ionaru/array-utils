@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { getNumberEnumKeys, getNumberEnumValues } from './get-number-enum-values';
 
 enum MyNumberEnum {

@@ -18,7 +18,7 @@ export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: (item:
         }
     };
 
-    const compare = (a: any, b: any) => {
+    const compare = (a: T, b: T) => {
         let left = attributeGetter(a);
         let right = attributeGetter(b);
 
