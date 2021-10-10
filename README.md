@@ -94,7 +94,7 @@ Filter duplicate object attributes from an array.
 import { uniquifyObjectsArray } from '@ionaru/array-utils';
 
 const myArray = [
-    {x: 1, y: 2}, 
+    {x: 1, y: 2},
     {x: 2, y: 9},
     {x: 1, y: 9},
     {x: 5, y: 2},
@@ -109,13 +109,13 @@ console.log(uniqueArrayOnY); // [{x: 1, y: 2}, {x: 1, y: 9}, {x: 4, y: 1}]
 ```
 
 ### `groupArrayByObjectProperty(array, attributeGetter)`
-Filter duplicate object attributes from an array.
+Group elements with the same object attributes together.
 
 ```js
 import { groupArrayByObjectProperty } from '@ionaru/array-utils';
 
 const myArray = [
-    {x: 1, y: 2}, 
+    {x: 1, y: 2},
     {x: 2, y: 9},
     {x: 1, y: 9},
     {x: 5, y: 2},
@@ -125,9 +125,9 @@ const myArray = [
 const uniqueArrayOnX = groupArrayByObjectProperty(myArray, (element) => element.x);
 console.log(uniqueArrayOnX);
 // {
-//     1: [{x: 1, y: 2}, {x: 1, y: 9}], 
-//     2: [{x: 2, y: 9}], 
-//     4: [{x: 4, y: 1}], 
+//     1: [{x: 1, y: 2}, {x: 1, y: 9}],
+//     2: [{x: 2, y: 9}],
+//     4: [{x: 4, y: 1}],
 //     5: [{x: 5, y: 2}]
 // }
 
