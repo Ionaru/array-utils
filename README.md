@@ -181,3 +181,33 @@ console.log(enumValues);
 //     2,
 // ]
 ```
+
+### `Queue(maxLength)`
+A typed Queue implementation.
+
+```ts
+import { Queue } from '@ionaru/array-utils';
+
+new queue = new Queue<string>(20);
+queue.enqueue('Some value');
+queue.dequeue(); // returns 'Some value' and deleted it from the queue
+
+queue.enqueue('Another value');
+queue.enqueue('Yet another value');
+queue.peek(); // returns 'Some value', but does not delete it.
+```
+
+### `Stack(maxLength)`
+A typed Stack implementation.
+
+```ts
+import { Stack } from '@ionaru/array-utils';
+
+new stack = new Stack<string>(20);
+stack.push('Some value');
+stack.pop(); // returns 'Some value' and deleted it from the stack
+
+stack.push('Another value');
+stack.push('Yet another value');
+stack.peek(); // returns 'Yet another value', but does not delete it.
+```

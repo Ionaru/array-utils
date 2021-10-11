@@ -22,6 +22,9 @@ export abstract class Tube<T> {
         return this.tubeArray.length;
     }
 
+    /**
+     * Provide a frozen copy of the internal array.
+     */
     public get tube(): readonly T[] {
         return Object.freeze([...this.tubeArray]);
     }
