@@ -94,4 +94,14 @@ describe('queue', () => {
         expect(queue.peek()).toBeUndefined();
     });
 
+    it('lets elements exit in queue order', () => {
+        expect.assertions(3);
+        const queue = new Queue<number>(2);
+        queue.enqueue(1);
+        queue.enqueue(2);
+        expect(queue).toHaveLength(2);
+        expect(queue.dequeue()).toBe(1);
+        expect(queue.dequeue()).toBe(2);
+    });
+
 });

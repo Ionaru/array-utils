@@ -94,4 +94,14 @@ describe('stack', () => {
         expect(stack.peek()).toBeUndefined();
     });
 
+    it('lets elements exit in stack order', () => {
+        expect.assertions(3);
+        const stack = new Stack<number>(2);
+        stack.push(1);
+        stack.push(2);
+        expect(stack).toHaveLength(2);
+        expect(stack.pop()).toBe(2);
+        expect(stack.pop()).toBe(1);
+    });
+
 });
