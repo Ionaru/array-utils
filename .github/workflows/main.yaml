@@ -13,4 +13,4 @@ on:
 
 jobs:
   run:
-    uses: Ionaru/Ionaru/.github/workflows/npm/main.yaml@main
+    uses: Ionaru/Ionaru/.github/workflows/npm-main.yaml@main
