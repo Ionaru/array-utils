@@ -10,8 +10,8 @@ export const generateNumbersArray = (length: number, start = 1, step = 1): numbe
     // Return step || 0
 
     // If step !== 0
-    // Return ((i + (start / step)) * step) || 0
+    // Return (start + (index * step)) || 0
 
-    const stepper = step === 0 ? () => start || 0 : (_: undefined, index: number) => ((index + (start / step)) * step) || 0;
+    const stepper = step === 0 ? () => start || 0 : (_: undefined, index: number) => (start + (index * step)) || 0;
     return Array(length).fill(undefined).map(stepper);
 };
