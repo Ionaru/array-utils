@@ -3,9 +3,11 @@
  * @param array - The array to convert.
  * @param attributeGetter - A function for getting the attribute to group on.
  */
-export const objectsArrayToObject = <T>(array: T[], attributeGetter: (item: T) => string | number): { [index: string]: T } => {
+export const objectsArrayToObject = <T>(
+    array: T[], attributeGetter: (item: T) => string | number
+): Record<string, T> => {
 
-    const object: { [index: string]: T } = {};
+    const object: Record<string, T> = {};
 
     for (const item of array) {
         object[attributeGetter(item)] = item;
