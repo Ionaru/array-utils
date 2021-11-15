@@ -3,12 +3,13 @@ import * as index from './index';
 describe('export tests', () => {
 
     it('must export functions', () => {
-        expect.assertions(11);
+        expect.assertions(12);
 
-        expect(Object.entries(index)).toHaveLength(10);
+        expect(Object.entries(index)).toHaveLength(11);
         expect(typeof index.generateNumbersArray).toBe('function');
         expect(typeof index.objectsArrayToObject).toBe('function');
         expect(typeof index.sortArrayByObjectProperty).toBe('function');
+        expect(typeof index.getRandomItemFromArray).toBe('function');
         expect(typeof index.uniquifyArray).toBe('function');
         expect(typeof index.uniquifyObjectsArray).toBe('function');
         expect(typeof index.groupArrayByObjectProperty).toBe('function');

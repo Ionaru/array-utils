@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### BREAKING CHANGES
 - Changed the expected return type of groupArrayByObjectProperty's attributeGetter.
 
+### Added
+- getRandomItemFromArray function.
+
 ## [5.1.0] - 2021-11-08
 ### Added
 - Queue class.
