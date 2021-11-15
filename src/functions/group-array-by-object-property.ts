@@ -3,13 +3,13 @@
  * @param array - The array to group.
  * @param attributeGetter - A function for getting the attribute to group on.
  */
-export const groupArrayByObjectProperty = <T extends Record<string, any>, K extends keyof T>(
-    array: T[], attributeGetter: (item: T) => T[K]
-): Record<T[K], T[]> => array.reduce(
+export const groupArrayByObjectProperty = <T extends Record<string, any>>(
+    array: T[], attributeGetter: (item: T) => keyof any
+): Record<keyof any, T[]> => array.reduce(
         (previous, current) => {
             const value = attributeGetter(current);
             previous[value] = (previous[value] || []).concat(current);
             return previous;
         },
-        {} as Record<T[K], T[]>,
+        {} as Record<keyof any, T[]>,
     );
