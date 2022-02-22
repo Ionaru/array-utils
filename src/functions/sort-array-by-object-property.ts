@@ -1,4 +1,4 @@
-type sortableProperty = string | number | Date;
+type SortableProperty = string | number | Date;
 
 /**
  * Sort an array of objects by one of the object's properties (in-place).
@@ -6,7 +6,7 @@ type sortableProperty = string | number | Date;
  * @param attributeGetter - A function to fetch the property from the object.
  * @param inverse - Inverse the output (descending).
  */
-export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: (item: T) => sortableProperty, inverse = false): T[] => {
+export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: (item: T) => SortableProperty, inverse = false): T[] => {
 
     const checkIfEqualTypes = (left: any, right: any): void => {
         if (left === undefined || right === undefined) {

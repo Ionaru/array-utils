@@ -1,15 +1,15 @@
 import { getNumberEnumKeys, getNumberEnumValues } from './get-number-enum-values';
 
 enum MyNumberEnum {
-    ValueZero,
-    ValueOne,
-    ValueTwo,
+    VALUE_ZERO,
+    VALUE_ONE,
+    VALUE_TWO,
 }
 
 enum MyOneIndexedNumberEnum {
-    ValueOne = 1,
-    ValueTwo,
-    ValueThree,
+    VALUE_ONE = 1,
+    VALUE_TWO,
+    VALUE_THREE,
 }
 
 describe('getNumberEnumKeys', () => {
@@ -18,9 +18,9 @@ describe('getNumberEnumKeys', () => {
         expect.assertions(1);
         const values = getNumberEnumKeys(MyNumberEnum);
         expect(values).toStrictEqual([
-            'ValueZero',
-            'ValueOne',
-            'ValueTwo',
+            'VALUE_ZERO',
+            'VALUE_ONE',
+            'VALUE_TWO',
         ]);
     });
 
@@ -28,9 +28,9 @@ describe('getNumberEnumKeys', () => {
         expect.assertions(1);
         const values = getNumberEnumKeys(MyOneIndexedNumberEnum);
         expect(values).toStrictEqual([
-            'ValueOne',
-            'ValueTwo',
-            'ValueThree',
+            'VALUE_ONE',
+            'VALUE_TWO',
+            'VALUE_THREE',
         ]);
     });
 
@@ -42,9 +42,9 @@ describe('getNumberEnumValues', () => {
         expect.assertions(1);
         const values = getNumberEnumValues(MyNumberEnum);
         expect(values).toStrictEqual([
-            MyNumberEnum.ValueZero,
-            MyNumberEnum.ValueOne,
-            MyNumberEnum.ValueTwo,
+            MyNumberEnum.VALUE_ZERO,
+            MyNumberEnum.VALUE_ONE,
+            MyNumberEnum.VALUE_TWO,
         ]);
     });
 
@@ -52,9 +52,9 @@ describe('getNumberEnumValues', () => {
         expect.assertions(1);
         const values = getNumberEnumValues(MyOneIndexedNumberEnum);
         expect(values).toStrictEqual([
-            MyOneIndexedNumberEnum.ValueOne,
-            MyOneIndexedNumberEnum.ValueTwo,
-            MyOneIndexedNumberEnum.ValueThree,
+            MyOneIndexedNumberEnum.VALUE_ONE,
+            MyOneIndexedNumberEnum.VALUE_TWO,
+            MyOneIndexedNumberEnum.VALUE_THREE,
         ]);
     });
 
