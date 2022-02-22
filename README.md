@@ -140,6 +140,23 @@ console.log(uniqueArrayOnY);
 // }
 ```
 
+### `splitArrayIntoChunks(array, chunkSize)`
+Split an array into chunks of the given size.
+
+```js
+import { splitArrayIntoChunks } from '@ionaru/array-utils';
+
+const myArray = [1, 2, 3, 4, 5];
+
+const chunks = splitArrayIntoChunks(myArray, 2);
+console.log(chunks);
+// [
+//     [1, 2],
+//     [3, 4],
+//     [5]
+// ]
+```
+
 ### `getNumberEnumKeys(numberEnum)`
 Get the key names from a Typescript number-Enum.
 
