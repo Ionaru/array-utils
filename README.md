@@ -108,6 +108,23 @@ const uniqueArrayOnY = uniquifyObjectsArray(myArray, (element) => element.y);
 console.log(uniqueArrayOnY); // [{x: 1, y: 2}, {x: 1, y: 9}, {x: 4, y: 1}]
 ```
 
+### `getRandomItemFromArray(array, remove)`
+Get a random item from an array and optionally remove it.
+
+```js
+import { getRandomItemFromArray } from '@ionaru/array-utils';
+
+const myArray = [1, 2, 3];
+
+const randomItem = getRandomItemFromArray(myArray);
+console.log(randomItem); // 1 or 2 or 3
+console.log(myArray); // [1, 2, 3]
+
+const secondRandomItem = getRandomItemFromArray(myArray, true);
+console.log(secondRandomItem); // 1 or 2 or 3
+console.log(myArray); // [1, 2] or [2, 3] or [1, 3]
+```
+
 ### `groupArrayByObjectProperty(array, attributeGetter)`
 Group elements with the same object attributes together.
 

@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - splitArrayIntoChunks function.
 
+## [6.0.0] - 2021-11-15
+### BREAKING CHANGES
+- Changed the expected return type of groupArrayByObjectProperty's attributeGetter.
+
+### Added
+- getRandomItemFromArray function.
+
 ## [5.1.0] - 2021-11-08
 ### Added
 - Queue class.
@@ -81,7 +88,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial code.
 - Setup for this project.
 
-[Unreleased]: https://github.com/Ionaru/array-utils/compare/5.1.0...HEAD
+[Unreleased]: https://github.com/Ionaru/array-utils/compare/6.0.0...HEAD
+[6.0.0]: https://github.com/Ionaru/array-utils/compare/5.1.0...6.0.0
 [5.1.0]: https://github.com/Ionaru/array-utils/compare/5.0.0...5.1.0
 [5.0.0]: https://github.com/Ionaru/array-utils/compare/4.0.1...5.0.0
 [4.0.1]: https://github.com/Ionaru/array-utils/compare/4.0.0...4.0.1
