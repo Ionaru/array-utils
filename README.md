@@ -6,7 +6,7 @@
 [![codecov](https://img.shields.io/codecov/c/github/Ionaru/array-utils/master.svg?style=for-the-badge)](https://codecov.io/gh/Ionaru/array-utils)
 
 ## Description
-This package contains a number of utility functions for arrays.
+This package contains a number of strongly typed utility functions for arrays.
 
 ## Usage
 ```
@@ -53,6 +53,26 @@ console.log(object);
 //     abc: {item: 'abc', price: 15},
 //     def {item: 'def', price: 10},
 // }
+```
+
+### `objectToObjectsArray(object)`
+Convert an object containing objects to an array containing objects.
+The object key will be added to the array as an attribute named 'key'.
+
+```js
+import { objectToObjectsArray } from '@ionaru/array-utils';
+
+const myObject = {
+    a: {item: 'abc', price: 15},
+    b: {item: 'def', price: 10},
+};
+
+const array = objectToObjectsArray(myObject);
+console.log(array);
+// [
+//     {key: 'a', item: 'abc', price: 15},
+//     {key: 'b', item: 'def', price: 10},
+// ]
 ```
 
 ### `sortArrayByObjectProperty(array, attributeGetter, inverse)`

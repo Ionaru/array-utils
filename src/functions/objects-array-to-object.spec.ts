@@ -1,4 +1,4 @@
-import { objectsArrayToObject } from './objects-array-to-object';
+import { objectsArrayToObject, objectToObjectsArray } from './objects-array-to-object';
 
 describe('objectsArrayToObject', () => {
     it('convert array to object', () => {
@@ -48,5 +48,37 @@ describe('objectsArrayToObject', () => {
             1: {1: 1, 2: 2},
             3: {1: 3, 2: 4},
         });
+    });
+});
+
+describe('objectToObjectsArray', () => {
+    it('converts an object to array', () => {
+        expect.assertions(1);
+        const object = {
+            a: {oneKey: 'oneValue', twoKey: 'twoValue'},
+            b: {oneKey: 'threeValue', twoKey: 'fourValue'},
+        };
+
+        const result = objectToObjectsArray(object);
+
+        expect(result).toStrictEqual([
+            {key: 'a', oneKey: 'oneValue', twoKey: 'twoValue'},
+            {key: 'b', oneKey: 'threeValue', twoKey: 'fourValue'},
+        ]);
+    });
+
+    it('converts an object with number as keys to array', () => {
+        expect.assertions(1);
+        const object = {
+            1: {oneKey: 'oneValue', twoKey: 'twoValue'},
+            6: {oneKey: 'threeValue', twoKey: 'fourValue'},
+        };
+
+        const result = objectToObjectsArray(object);
+
+        expect(result).toStrictEqual([
+            {key: '1', oneKey: 'oneValue', twoKey: 'twoValue'},
+            {key: '6', oneKey: 'threeValue', twoKey: 'fourValue'},
+        ]);
     });
 });
