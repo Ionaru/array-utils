@@ -1,10 +1,11 @@
+export { filterArray } from './functions/filter-array';
 export { generateNumbersArray } from './functions/generate-numbers-array';
-export { uniquifyArray, uniquifyObjectsArray } from './functions/uniquify-array';
+export { getNumberEnumKeys, getNumberEnumValues } from './functions/get-number-enum-values';
 export { getRandomItemFromArray } from './functions/get-random-item-from-array';
+export { groupArrayByObjectProperty } from './functions/group-array-by-object-property';
 export { objectsArrayToObject, objectToObjectsArray } from './functions/objects-array-to-object';
 export { sortArrayByObjectProperty } from './functions/sort-array-by-object-property';
-export { groupArrayByObjectProperty } from './functions/group-array-by-object-property';
-export { getNumberEnumKeys, getNumberEnumValues } from './functions/get-number-enum-values';
 export { splitArrayIntoChunks } from './functions/split-array-into-chunks';
+export { uniquifyArray, uniquifyObjectsArray } from './functions/uniquify-array';
 export { Queue } from './data-structures/queue';
 export { Stack } from './data-structures/stack';

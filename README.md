@@ -13,6 +13,7 @@ This package contains a number of strongly typed utility functions for arrays.
    * [Installation](#installation)
    * [Usage](#usage)
       * Functions
+        * [filterArray](#filterarrayarray)
         * [generateNumbersArray](#generatenumbersarraylength-start-step)
         * [getNumberEnumKeys](#getnumberenumkeysnumberenum)
         * [getNumberEnumValues](#getnumberenumvaluesnumberenum)
@@ -34,6 +35,18 @@ npm install @ionaru/array-utils
 ```
 
 ## Usage
+
+### `filterArray(array)`
+Filter 'undefined' elements from an array.
+
+```js
+import { filterArray } from '@ionaru/array-utils';
+
+const array = [1, 2, undefined, 4, undefined, 3];
+
+const filteredArray = filterArray(array);
+console.log(filteredArray); // [1, 2, 4, 3]
+```
 
 ### `generateNumbersArray(length, start, step)`
 Generates an array of numbers, both "start" and "step" are optional and default to 1.
