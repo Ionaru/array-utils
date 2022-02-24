@@ -57,6 +57,97 @@ const array = generateNumbersArray(5, -2, -3);
 console.log(array); // [-2, -5, -8, -12, -15]
 ```
 
+### `getNumberEnumKeys(numberEnum)`
+Get the key names from a Typescript number-Enum.
+
+```ts
+import { getNumberEnumKeys } from '@ionaru/array-utils';
+
+enum MyEnum {
+    ZERO,
+    ONE,
+    TWO,
+}
+
+const enumKeys = getNumberEnumKeys(MyEnum);
+console.log(enumKeys);
+// [
+//     'ZERO',
+//     'ONE',
+//     'TWO',
+// ]
+```
+
+### `getNumberEnumValues(numberEnum)`
+Get the values from a Typescript number-Enum.
+
+```ts
+import { getNumberEnumValues } from '@ionaru/array-utils';
+
+enum MyEnum {
+    ZERO,
+    ONE,
+    TWO,
+}
+
+const enumValues = getNumberEnumValues(MyEnum);
+console.log(enumValues);
+// [
+//     0,
+//     1,
+//     2,
+// ]
+```
+
+### `getRandomItemFromArray(array, remove)`
+Get a random item from an array and optionally remove it.
+
+```js
+import { getRandomItemFromArray } from '@ionaru/array-utils';
+
+const myArray = [1, 2, 3];
+
+const randomItem = getRandomItemFromArray(myArray);
+console.log(randomItem); // 1 or 2 or 3
+console.log(myArray); // [1, 2, 3]
+
+const secondRandomItem = getRandomItemFromArray(myArray, true);
+console.log(secondRandomItem); // 1 or 2 or 3
+console.log(myArray); // [1, 2] or [2, 3] or [1, 3]
+```
+
+### `groupArrayByObjectProperty(array, attributeGetter)`
+Group elements with the same object attributes together.
+
+```js
+import { groupArrayByObjectProperty } from '@ionaru/array-utils';
+
+const myArray = [
+    {x: 1, y: 2},
+    {x: 2, y: 9},
+    {x: 1, y: 9},
+    {x: 5, y: 2},
+    {x: 4, y: 1},
+];
+
+const uniqueArrayOnX = groupArrayByObjectProperty(myArray, (element) => element.x);
+console.log(uniqueArrayOnX);
+// {
+//     1: [{x: 1, y: 2}, {x: 1, y: 9}],
+//     2: [{x: 2, y: 9}],
+//     4: [{x: 4, y: 1}],
+//     5: [{x: 5, y: 2}]
+// }
+
+const uniqueArrayOnY = groupArrayByObjectProperty(myArray, (element) => element.y);
+console.log(uniqueArrayOnY);
+// {
+//     1: [{x: 4, y: 1}],
+//     2: [{x: 1, y: 2}, {x: 5, y: 2}],
+//     9: [{x: 2, y: 9}, {x: 1, y: 9}]
+// }
+```
+
 ### `objectsArrayToObject(array, attributeGetter)`
 Convert an array containing objects to an object containing objects.
 The return value of the `attributeGetter` parameter will be used as key for the objects.
@@ -117,6 +208,23 @@ console.log(myArray);
 // ]
 ```
 
+### `splitArrayIntoChunks(array, chunkSize)`
+Split an array into chunks of the given size.
+
+```js
+import { splitArrayIntoChunks } from '@ionaru/array-utils';
+
+const myArray = [1, 2, 3, 4, 5];
+
+const chunks = splitArrayIntoChunks(myArray, 2);
+console.log(chunks);
+// [
+//     [1, 2],
+//     [3, 4],
+//     [5]
+// ]
+```
+
 ### `uniquifyArray(array)`
 Filter duplicate values from an array.
 
@@ -148,114 +256,6 @@ console.log(uniqueArrayOnX); // [{x: 1, y: 2}, {x: 2, y: 6}, {x: 5, y: 2}, {x: 4
 
 const uniqueArrayOnY = uniquifyObjectsArray(myArray, (element) => element.y);
 console.log(uniqueArrayOnY); // [{x: 1, y: 2}, {x: 1, y: 9}, {x: 4, y: 1}]
-```
-
-### `getRandomItemFromArray(array, remove)`
-Get a random item from an array and optionally remove it.
-
-```js
-import { getRandomItemFromArray } from '@ionaru/array-utils';
-
-const myArray = [1, 2, 3];
-
-const randomItem = getRandomItemFromArray(myArray);
-console.log(randomItem); // 1 or 2 or 3
-console.log(myArray); // [1, 2, 3]
-
-const secondRandomItem = getRandomItemFromArray(myArray, true);
-console.log(secondRandomItem); // 1 or 2 or 3
-console.log(myArray); // [1, 2] or [2, 3] or [1, 3]
-```
-
-### `groupArrayByObjectProperty(array, attributeGetter)`
-Group elements with the same object attributes together.
-
-```js
-import { groupArrayByObjectProperty } from '@ionaru/array-utils';
-
-const myArray = [
-    {x: 1, y: 2},
-    {x: 2, y: 9},
-    {x: 1, y: 9},
-    {x: 5, y: 2},
-    {x: 4, y: 1},
-];
-
-const uniqueArrayOnX = groupArrayByObjectProperty(myArray, (element) => element.x);
-console.log(uniqueArrayOnX);
-// {
-//     1: [{x: 1, y: 2}, {x: 1, y: 9}],
-//     2: [{x: 2, y: 9}],
-//     4: [{x: 4, y: 1}],
-//     5: [{x: 5, y: 2}]
-// }
-
-const uniqueArrayOnY = groupArrayByObjectProperty(myArray, (element) => element.y);
-console.log(uniqueArrayOnY);
-// {
-//     1: [{x: 4, y: 1}],
-//     2: [{x: 1, y: 2}, {x: 5, y: 2}],
-//     9: [{x: 2, y: 9}, {x: 1, y: 9}]
-// }
-```
-
-### `splitArrayIntoChunks(array, chunkSize)`
-Split an array into chunks of the given size.
-
-```js
-import { splitArrayIntoChunks } from '@ionaru/array-utils';
-
-const myArray = [1, 2, 3, 4, 5];
-
-const chunks = splitArrayIntoChunks(myArray, 2);
-console.log(chunks);
-// [
-//     [1, 2],
-//     [3, 4],
-//     [5]
-// ]
-```
-
-### `getNumberEnumKeys(numberEnum)`
-Get the key names from a Typescript number-Enum.
-
-```ts
-import { getNumberEnumKeys } from '@ionaru/array-utils';
-
-enum MyEnum {
-    ZERO,
-    ONE,
-    TWO,
-}
-
-const enumKeys = getNumberEnumKeys(MyEnum);
-console.log(enumKeys);
-// [
-//     'ZERO',
-//     'ONE',
-//     'TWO',
-// ]
-```
-
-### `getNumberEnumValues(numberEnum)`
-Get the values from a Typescript number-Enum.
-
-```ts
-import { getNumberEnumValues } from '@ionaru/array-utils';
-
-enum MyEnum {
-    ZERO,
-    ONE,
-    TWO,
-}
-
-const enumValues = getNumberEnumValues(MyEnum);
-console.log(enumValues);
-// [
-//     0,
-//     1,
-//     2,
-// ]
 ```
 
 ### `Queue(maxLength)`
