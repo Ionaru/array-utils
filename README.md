@@ -8,10 +8,32 @@
 ## Description
 This package contains a number of strongly typed utility functions for arrays.
 
-## Usage
+## Table of contents
+
+   * [Installation](#installation)
+   * [Usage](#usage)
+      * Functions
+        * [generateNumbersArray](#generatenumbersarraylength-start-step)
+        * [getNumberEnumKeys](#getnumberenumkeysnumberenum)
+        * [getNumberEnumValues](#getnumberenumvaluesnumberenum)
+        * [getRandomItemFromArray](#getrandomitemfromarrayarray-remove)
+        * [groupArrayByObjectProperty](#grouparraybyobjectpropertyarray-attributegetter)
+        * [objectsArrayToObject](#objectsarraytoobjectarray-attributegetter)
+        * [objectToObjectsArray](#objecttoobjectsarrayobject)
+        * [sortArrayByObjectProperty](#sortarraybyobjectpropertyarray-attributegetter-inverse)
+        * [splitArrayIntoChunks](#splitarrayintochunksarray-chunksize)
+        * [uniquifyArray](#uniquifyarrayarray)
+        * [uniquifyObjectsArray](#uniquifyobjectsarrayarray-attributegetter)
+      * Structures
+        * [Queue](#queuemaxlength)
+        * [Stack](#queuemaxlength)
+
+## Installation
 ```
 npm install @ionaru/array-utils
 ```
+
+## Usage
 
 ### `generateNumbersArray(length, start, step)`
 Generates an array of numbers, both "start" and "step" are optional and default to 1.
@@ -168,7 +190,7 @@ console.log(uniqueArrayOnX);
 //     5: [{x: 5, y: 2}]
 // }
 
-const uniqueArrayOnY = uniquifyObjectsArray(myArray, (element) => element.y);
+const uniqueArrayOnY = groupArrayByObjectProperty(myArray, (element) => element.y);
 console.log(uniqueArrayOnY);
 // {
 //     1: [{x: 4, y: 1}],
