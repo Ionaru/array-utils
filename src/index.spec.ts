@@ -3,9 +3,9 @@ import * as index from './index';
 describe('export tests', () => {
 
     it('must export functions', () => {
-        expect.assertions(15);
+        expect.assertions(16);
 
-        expect(Object.entries(index)).toHaveLength(14);
+        expect(Object.entries(index)).toHaveLength(15);
         expect(typeof index.filterArray).toBe('function');
         expect(typeof index.generateNumbersArray).toBe('function');
         expect(typeof index.getNumberEnumValues).toBe('function');
@@ -15,6 +15,7 @@ describe('export tests', () => {
         expect(typeof index.objectsArrayToObject).toBe('function');
         expect(typeof index.objectToObjectsArray).toBe('function');
         expect(typeof index.sortArrayByObjectProperty).toBe('function');
+        expect(typeof index.sortArrayByObjectPropertyLength).toBe('function');
         expect(typeof index.splitArrayIntoChunks).toBe('function');
         expect(typeof index.uniquifyArray).toBe('function');
         expect(typeof index.uniquifyObjectsArray).toBe('function');

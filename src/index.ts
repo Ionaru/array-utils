@@ -5,6 +5,7 @@ export { getRandomItemFromArray } from './functions/get-random-item-from-array';
 export { groupArrayByObjectProperty } from './functions/group-array-by-object-property';
 export { objectsArrayToObject, objectToObjectsArray } from './functions/objects-array-to-object';
 export { sortArrayByObjectProperty } from './functions/sort-array-by-object-property';
+export { sortArrayByObjectPropertyLength } from './functions/sort-array-by-object-property-length';
 export { splitArrayIntoChunks } from './functions/split-array-into-chunks';
 export { uniquifyArray, uniquifyObjectsArray } from './functions/uniquify-array';
 export { Queue } from './data-structures/queue';

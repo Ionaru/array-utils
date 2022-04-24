@@ -22,6 +22,7 @@ This package contains a number of strongly typed utility functions for arrays.
         * [objectsArrayToObject](#objectsarraytoobjectarray-attributegetter)
         * [objectToObjectsArray](#objecttoobjectsarrayobject)
         * [sortArrayByObjectProperty](#sortarraybyobjectpropertyarray-attributegetter-inverse)
+        * [sortArrayByObjectPropertyLength](#sortarraybyobjectpropertylengtharray-attributegetter-inverse)
         * [splitArrayIntoChunks](#splitarrayintochunksarray-chunksize)
         * [uniquifyArray](#uniquifyarrayarray)
         * [uniquifyObjectsArray](#uniquifyobjectsarrayarray-attributegetter)
@@ -202,7 +203,7 @@ console.log(array);
 ```
 
 ### `sortArrayByObjectProperty(array, attributeGetter, inverse)`
-Sort an array of object by the value in those objects.
+Sort an array of objects by the value in those objects.
 This function will sort the given array in-place.
 
 ```js
@@ -218,6 +219,26 @@ console.log(myArray);
 // [
 //     {item: 'def', price: 10},
 //     {item: 'abc', price: 15},
+// ]
+```
+
+### `sortArrayByObjectPropertyLength(array, attributeGetter, inverse)`
+Sort an array of objects by the length of a value in those objects.
+This function will sort the given array in-place.
+
+```js
+import { sortArrayByObjectPropertyLength } from '@ionaru/array-utils';
+
+const myArray = [
+    {user: 7, photos: [1, 6, 8]},
+    {user: 9, photos: [3, 7]},
+];
+
+sortArrayByObjectProperty(myArray, (element) => element.price);
+console.log(myArray);
+// [
+//     {user: 9, photos: [3, 7]},
+//     {user: 7, photos: [1, 6, 8]},
 // ]
 ```
 
