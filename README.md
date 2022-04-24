@@ -234,7 +234,7 @@ const myArray = [
     {user: 9, photos: [3, 7]},
 ];
 
-sortArrayByObjectProperty(myArray, (element) => element.price);
+sortArrayByObjectPropertyLength(myArray, (element) => element.photos);
 console.log(myArray);
 // [
 //     {user: 9, photos: [3, 7]},
