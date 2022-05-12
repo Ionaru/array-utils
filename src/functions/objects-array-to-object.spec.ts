@@ -81,4 +81,21 @@ describe('objectToObjectsArray', () => {
             {key: '6', oneKey: 'threeValue', twoKey: 'fourValue'},
         ]);
     });
+
+    it('returns an array with the correct type', () => {
+        expect.assertions(4);
+        const object = {
+            1: {oneKey: 'oneValue', twoKey: 'twoValue'},
+        };
+
+        const result = objectToObjectsArray(object);
+
+        expect(result).toStrictEqual([
+            {key: '1', oneKey: 'oneValue', twoKey: 'twoValue'},
+        ]);
+
+        expect(result[0].key).toBe('1');
+        expect(result[0].oneKey).toBe('oneValue');
+        expect(result[0].twoKey).toBe('twoValue');
+    });
 });
