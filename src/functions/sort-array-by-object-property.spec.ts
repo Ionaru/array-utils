@@ -1,7 +1,7 @@
 import { sortArrayByObjectProperty } from './sort-array-by-object-property';
 
 describe('sortArrayByObjectProperty', () => {
-    let unsortedArray: Array<{ value: number }>;
+    let unsortedArray: Array<{ value: number; }>;
 
     beforeEach(() => {
         unsortedArray = [

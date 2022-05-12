@@ -4,7 +4,9 @@
  * @param attributeGetter - A function to fetch the property from the object.
  * @param inverse - Inverse the output (descending).
  */
-export const sortArrayByObjectPropertyLength = <T>(array: T[], attributeGetter: (item: T) => { length: number }, inverse = false): void => {
+export const sortArrayByObjectPropertyLength = <T>(
+    array: T[], attributeGetter: (item: T) => { length: number; }, inverse = false
+): void => {
 
     const compare = (a: any, b: any) => {
         const left = attributeGetter(a).length;
