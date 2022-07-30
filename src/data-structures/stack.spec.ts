@@ -53,45 +53,117 @@ describe('stack', () => {
         expect(() => new Stack(undefined)).not.toThrow('maxLength must be an integer greater than zero when defined.');
     });
 
-    it('shows normal stack behaviour', () => {
-        expect.assertions(26);
-        const stack = new Stack<number>(1);
-        expect(stack.isEmpty).toBe(true);
-        expect(stack.isFull).toBe(false);
-        expect(stack.tube).toHaveLength(0);
-        expect(stack).toHaveLength(0);
 
-        stack.push(5);
-        expect(stack.isEmpty).toBe(false);
-        expect(stack.isFull).toBe(true);
+    it('can stack a value', () => {
+        expect.assertions(1);
+        const stack = new Stack(1);
+        stack.push('a');
         expect(stack.tube).toHaveLength(1);
-        expect(stack).toHaveLength(1);
-        expect(stack.peek()).toBe(5);
+    });
 
-        expect(() => stack.push(5)).toThrow('Stack is full!');
+    it('can stack multiple values', () => {
+        expect.assertions(1);
+        const stack = new Stack(3);
+        stack.push('a');
+        stack.push('b');
+        stack.push('c');
+        expect(stack.tube).toHaveLength(3);
+    });
 
-        stack.pop();
+    it('can stack multiple values when length is not defined', () => {
+        expect.assertions(1);
+        const stack = new Stack();
+        stack.push('a');
+        stack.push('b');
+        stack.push('c');
+        expect(stack.tube).toHaveLength(3);
+    });
+
+    it('should return true on isEmpty when empty', () => {
+        expect.assertions(1);
+        const stack = new Stack();
         expect(stack.isEmpty).toBe(true);
-        expect(stack.isFull).toBe(false);
-        expect(stack.tube).toHaveLength(0);
-        expect(stack).toHaveLength(0);
-        expect(stack.peek()).toBeUndefined();
+    });
 
+    it('should return false on isEmpty when not empty', () => {
+        expect.assertions(1);
+        const stack = new Stack();
+        stack.push('a');
+        expect(stack.isEmpty).toBe(false);
+    });
+
+    it('should return true on isFull when full', () => {
+        expect.assertions(1);
+        const stack = new Stack(1);
+        stack.push('a');
+        expect(stack.isFull).toBe(true);
+    });
+
+    it('should return false on isFull when not full', () => {
+        expect.assertions(1);
+        const stack = new Stack(2);
+        stack.push('a');
+        expect(stack.isFull).toBe(false);
+    });
+
+    it('should return false on isFull when empty', () => {
+        expect.assertions(1);
+        const stack = new Stack();
+        expect(stack.isFull).toBe(false);
+    });
+
+    it('should throw an error when pushing to a full stack', () => {
+        expect.assertions(1);
+        const stack = new Stack(1);
+        stack.push('a');
+        expect(() => stack.push('b')).toThrow('Stack is full!');
+    });
+
+    it('should return undefined when popping from an empty stack', () => {
+        expect.assertions(1);
+        const stack = new Stack();
         expect(stack.pop()).toBeUndefined();
+    });
 
-        stack.push(6);
-        expect(stack.isEmpty).toBe(false);
-        expect(stack.isFull).toBe(true);
-        expect(stack.tube).toHaveLength(1);
-        expect(stack).toHaveLength(1);
-        expect(stack.peek()).toBe(6);
+    it('should return the last element when popping from a non-empty stack', () => {
+        expect.assertions(1);
+        const stack = new Stack();
+        stack.push('a');
+        stack.push('b');
+        stack.push('c');
+        expect(stack.pop()).toBe('c');
+    });
 
-        stack.clear();
-        expect(stack.isEmpty).toBe(true);
-        expect(stack.isFull).toBe(false);
-        expect(stack.tube).toHaveLength(0);
-        expect(stack).toHaveLength(0);
+    it('should return undefined when peeking from an empty stack', () => {
+        expect.assertions(1);
+        const stack = new Stack();
         expect(stack.peek()).toBeUndefined();
+    });
+
+    it('should return the last element when peeking from a non-empty stack', () => {
+        expect.assertions(1);
+        const stack = new Stack();
+        stack.push('a');
+        stack.push('b');
+        stack.push('c');
+        expect(stack.peek()).toBe('c');
+    });
+
+    it('should return the correct length', () => {
+        expect.assertions(1);
+        const stack = new Stack(2);
+        stack.push('a');
+        stack.push('b');
+        expect(stack).toHaveLength(2);
+    });
+
+    it('should clear the stack', () => {
+        expect.assertions(1);
+        const stack = new Stack(2);
+        stack.push('a');
+        stack.push('b');
+        stack.clear();
+        expect(stack).toHaveLength(0);
     });
 
     it('lets elements exit in stack order', () => {

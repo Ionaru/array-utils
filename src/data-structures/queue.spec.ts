@@ -53,45 +53,116 @@ describe('queue', () => {
         expect(() => new Queue(undefined)).not.toThrow('maxLength must be an integer greater than zero when defined.');
     });
 
-    it('shows normal queue behaviour', () => {
-        expect.assertions(26);
-        const queue = new Queue<number>(1);
-        expect(queue.isEmpty).toBe(true);
-        expect(queue.isFull).toBe(false);
-        expect(queue.tube).toHaveLength(0);
-        expect(queue).toHaveLength(0);
-
-        queue.enqueue(5);
-        expect(queue.isEmpty).toBe(false);
-        expect(queue.isFull).toBe(true);
+    it('can queue a value', () => {
+        expect.assertions(1);
+        const queue = new Queue(1);
+        queue.enqueue('a');
         expect(queue.tube).toHaveLength(1);
-        expect(queue).toHaveLength(1);
-        expect(queue.peek()).toBe(5);
+    });
 
-        expect(() => queue.enqueue(5)).toThrow('Queue is full!');
+    it('can queue multiple values', () => {
+        expect.assertions(1);
+        const queue = new Queue(3);
+        queue.enqueue('a');
+        queue.enqueue('b');
+        queue.enqueue('c');
+        expect(queue.tube).toHaveLength(3);
+    });
 
-        queue.dequeue();
+    it('can queue multiple values when length is not defined', () => {
+        expect.assertions(1);
+        const queue = new Queue();
+        queue.enqueue('a');
+        queue.enqueue('b');
+        queue.enqueue('c');
+        expect(queue.tube).toHaveLength(3);
+    });
+
+    it('should return true on isEmpty when empty', () => {
+        expect.assertions(1);
+        const queue = new Queue();
         expect(queue.isEmpty).toBe(true);
-        expect(queue.isFull).toBe(false);
-        expect(queue.tube).toHaveLength(0);
-        expect(queue).toHaveLength(0);
-        expect(queue.peek()).toBeUndefined();
+    });
 
+    it('should return false on isEmpty when not empty', () => {
+        expect.assertions(1);
+        const queue = new Queue();
+        queue.enqueue('a');
+        expect(queue.isEmpty).toBe(false);
+    });
+
+    it('should return true on isFull when full', () => {
+        expect.assertions(1);
+        const queue = new Queue(1);
+        queue.enqueue('a');
+        expect(queue.isFull).toBe(true);
+    });
+
+    it('should return false on isFull when not full', () => {
+        expect.assertions(1);
+        const queue = new Queue(2);
+        queue.enqueue('a');
+        expect(queue.isFull).toBe(false);
+    });
+
+    it('should return false on isFull when empty', () => {
+        expect.assertions(1);
+        const queue = new Queue();
+        expect(queue.isFull).toBe(false);
+    });
+
+    it('should throw an error when pushing to a full queue', () => {
+        expect.assertions(1);
+        const queue = new Queue(1);
+        queue.enqueue('a');
+        expect(() => queue.enqueue('b')).toThrow('Queue is full!');
+    });
+
+    it('should return undefined when dequeuing from an empty queue', () => {
+        expect.assertions(1);
+        const queue = new Queue();
         expect(queue.dequeue()).toBeUndefined();
+    });
 
-        queue.enqueue(6);
-        expect(queue.isEmpty).toBe(false);
-        expect(queue.isFull).toBe(true);
-        expect(queue.tube).toHaveLength(1);
-        expect(queue).toHaveLength(1);
-        expect(queue.peek()).toBe(6);
+    it('should return the first element when dequeuing from a non-empty queue', () => {
+        expect.assertions(1);
+        const queue = new Queue();
+        queue.enqueue('a');
+        queue.enqueue('b');
+        queue.enqueue('c');
+        expect(queue.dequeue()).toBe('a');
+    });
 
-        queue.clear();
-        expect(queue.isEmpty).toBe(true);
-        expect(queue.isFull).toBe(false);
-        expect(queue.tube).toHaveLength(0);
-        expect(queue).toHaveLength(0);
+    it('should return undefined when peeking from an empty queue', () => {
+        expect.assertions(1);
+        const queue = new Queue();
         expect(queue.peek()).toBeUndefined();
+    });
+
+    it('should return the first element when peeking from a non-empty queue', () => {
+        expect.assertions(1);
+        const queue = new Queue();
+        queue.enqueue('a');
+        queue.enqueue('b');
+        queue.enqueue('c');
+        expect(queue.peek()).toBe('a');
+    });
+
+    it('should return the correct length', () => {
+        expect.assertions(1);
+        const queue = new Queue(2);
+        queue.enqueue('a');
+        queue.enqueue('b');
+        expect(queue).toHaveLength(2);
+    });
+
+    it('should clear the queue', () => {
+        expect.assertions(1);
+        const queue = new Queue(2);
+        queue.enqueue('a');
+        queue.enqueue('b');
+        queue.clear();
+        expect(queue).toHaveLength(0);
     });
 
     it('lets elements exit in queue order', () => {

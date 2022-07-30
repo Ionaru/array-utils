@@ -2,24 +2,28 @@ import * as index from './index';
 
 describe('export tests', () => {
 
-    it('must export functions', () => {
-        expect.assertions(16);
-
+    it('must export the expected amount of functions', () => {
+        expect.assertions(1);
         expect(Object.entries(index)).toHaveLength(15);
-        expect(typeof index.filterArray).toBe('function');
-        expect(typeof index.generateNumbersArray).toBe('function');
-        expect(typeof index.getNumberEnumValues).toBe('function');
-        expect(typeof index.getNumberEnumKeys).toBe('function');
-        expect(typeof index.getRandomItemFromArray).toBe('function');
-        expect(typeof index.groupArrayByObjectProperty).toBe('function');
-        expect(typeof index.objectsArrayToObject).toBe('function');
-        expect(typeof index.objectToObjectsArray).toBe('function');
-        expect(typeof index.sortArrayByObjectProperty).toBe('function');
-        expect(typeof index.sortArrayByObjectPropertyLength).toBe('function');
-        expect(typeof index.splitArrayIntoChunks).toBe('function');
-        expect(typeof index.uniquifyArray).toBe('function');
-        expect(typeof index.uniquifyObjectsArray).toBe('function');
-        expect(typeof index.Queue).toBe('function');
-        expect(typeof index.Stack).toBe('function');
+    });
+
+    it.each([
+        index.generateNumbersArray,
+        index.getNumberEnumValues,
+        index.getNumberEnumKeys,
+        index.getRandomItemFromArray,
+        index.groupArrayByObjectProperty,
+        index.objectsArrayToObject,
+        index.objectToObjectsArray,
+        index.sortArrayByObjectProperty,
+        index.sortArrayByObjectPropertyLength,
+        index.splitArrayIntoChunks,
+        index.uniquifyArray,
+        index.uniquifyObjectsArray,
+        index.Queue,
+        index.Stack,
+    ])('must export %s', (key) => {
+        expect.assertions(1);
+        expect(typeof key).toBe('function');
     });
 });
