@@ -4,7 +4,7 @@
  * @param attributeGetter - A function for getting the attribute to group on.
  */
 export const objectsArrayToObject = <T>(
-    array: T[], attributeGetter: (item: T) => string | number
+    array: T[], attributeGetter: (item: T) => string | number,
 ): Record<string, T> => {
 
     const object: Record<string, T> = {};
@@ -22,7 +22,7 @@ export const objectsArrayToObject = <T>(
  * @param object - The object to convert.
  */
 export const objectToObjectsArray = <T>(
-    object: Record<string, T>
+    object: Record<string, T>,
 ): Array<T & Record<'key', string>> => {
 
     const array: Array<T & Record<'key', string>> = [];

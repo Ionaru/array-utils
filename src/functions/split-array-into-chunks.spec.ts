@@ -34,7 +34,7 @@ describe('splitArrayIntoChunks', () => {
 
     it('chunksize infinity', () => {
         expect.assertions(1);
-        const output = splitArrayIntoChunks([1, 2, 3], Infinity);
+        const output = splitArrayIntoChunks([1, 2, 3], Number.POSITIVE_INFINITY);
         expect(output).toStrictEqual([[1, 2, 3]]);
     });
 

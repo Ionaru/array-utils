@@ -13,7 +13,7 @@ describe('filterArray', () => {
         [[undefined, undefined, undefined], []],
 
         [[1, undefined, 2], [1, 2]],
-        // eslint-disable-next-line no-null/no-null
+        // eslint-disable-next-line unicorn/no-null
         [[1, null, 2], [1, null, 2]],
         [[undefined, 2, 1], [2, 1]],
         [[1, 2, 3, undefined], [1, 2, 3]],

@@ -1,5 +1,15 @@
 type SortableProperty = string | number | Date;
 
+const checkIfEqualTypes = (left: any, right: any): void => {
+    if (left === undefined || right === undefined) {
+        throw new Error(`Unable to compare values '${left}' and '${right}'`);
+    }
+
+    if (typeof left !== typeof right) {
+        throw new TypeError(`Unable to compare different types: '${left}' (${typeof left}) and '${right}' (${typeof right})`);
+    }
+};
+
 /**
  * Sort an array of objects by one of the object's properties (in-place).
  * @param array - The array to sort.
@@ -7,16 +17,6 @@ type SortableProperty = string | number | Date;
  * @param inverse - Inverse the output (descending).
  */
 export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: (item: T) => SortableProperty, inverse = false): void => {
-
-    const checkIfEqualTypes = (left: any, right: any): void => {
-        if (left === undefined || right === undefined) {
-            throw new Error(`Unable to compare values '${left}' and '${right}'`);
-        }
-
-        if (typeof left !== typeof right) {
-            throw new Error(`Unable to compare different types: '${left}' (${typeof left}) and '${right}' (${typeof right})`);
-        }
-    };
 
     const compare = (a: any, b: any) => {
         let left = attributeGetter(a);

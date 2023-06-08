@@ -1,6 +1,6 @@
 export const getRandomItemFromArray = <T>(array: T[], remove = false): T => {
 
-    if (!array.length) {
+    if (array.length === 0) {
         throw new Error('Array is empty');
     }
 

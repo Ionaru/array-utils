@@ -6,12 +6,16 @@
  */
 export const generateNumbersArray = (length: number, start = 1, step = 1): number[] => {
 
+    if (length < 0 || !Number.isInteger(length)) {
+        throw new RangeError('Invalid array length');
+    }
+
     // If step === 0
     // Return step || 0
 
     // If step !== 0
     // Return (start + (index * step)) || 0
 
-    const stepper = step === 0 ? () => start || 0 : (_: undefined, index: number) => (start + (index * step)) || 0;
-    return Array(length).fill(undefined).map(stepper);
+    const stepper = step === 0 ? () => start || 0 : (index: number) => (start + (index * step)) || 0;
+    return Array.from({length}).map((_, index) => stepper(index));
 };

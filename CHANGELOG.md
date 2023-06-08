@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### BREAKING CHANGES
 - Dropped support for Node.js 14.
+- sortArrayByObjectProperty now throws a TypeError when it encounters elements of different types.
 
 ### Added
 - Support for Node.js 20.

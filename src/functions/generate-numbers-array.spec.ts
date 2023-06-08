@@ -38,14 +38,14 @@ describe('generateNumbersArray', () => {
         [[5, -2], [-2, -1, 0, 1, 2]],
         [[5, -2, -3], [-2, -5, -8, -11, -14]],
 
-    ])('an array with params %p', (params, expectedResult) => {
+    ])('an array with params %p', (parameters, expectedResult) => {
         expect.assertions(1);
-        const result = generateNumbersArray(params[0], params[1], params[2]);
+        const result = generateNumbersArray(parameters[0], parameters[1], parameters[2]);
         expect(result).toStrictEqual(expectedResult);
     });
 
     it.each([
-        -1, 1.5, Infinity,
+        -1, 1.5, Number.POSITIVE_INFINITY,
     ])('bad input: %p', (length) => {
         expect.assertions(1);
         expect(() => generateNumbersArray(length)).toThrow('Invalid array length');
