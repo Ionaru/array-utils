@@ -6,31 +6,33 @@
 [![codecov](https://img.shields.io/codecov/c/github/Ionaru/array-utils/master.svg?style=for-the-badge)](https://codecov.io/gh/Ionaru/array-utils)
 
 ## Description
+
 This package contains a number of strongly typed utility functions for arrays.
 
 ## Table of contents
 
-   * [Installation](#installation)
-   * [Usage](#usage)
-      * Functions
-        * [filterArray](#filterarrayarray)
-        * [generateNumbersArray](#generatenumbersarraylength-start-step)
-        * [getNumberEnumKeys](#getnumberenumkeysnumberenum)
-        * [getNumberEnumValues](#getnumberenumvaluesnumberenum)
-        * [getRandomItemFromArray](#getrandomitemfromarrayarray-remove)
-        * [groupArrayByObjectProperty](#grouparraybyobjectpropertyarray-attributegetter)
-        * [objectsArrayToObject](#objectsarraytoobjectarray-attributegetter)
-        * [objectToObjectsArray](#objecttoobjectsarrayobject)
-        * [sortArrayByObjectProperty](#sortarraybyobjectpropertyarray-attributegetter-inverse)
-        * [sortArrayByObjectPropertyLength](#sortarraybyobjectpropertylengtharray-attributegetter-inverse)
-        * [splitArrayIntoChunks](#splitarrayintochunksarray-chunksize)
-        * [uniquifyArray](#uniquifyarrayarray)
-        * [uniquifyObjectsArray](#uniquifyobjectsarrayarray-attributegetter)
-      * Structures
-        * [Queue](#queuemaxlength)
-        * [Stack](#queuemaxlength)
+-   [Installation](#installation)
+-   [Usage](#usage)
+    -   Functions
+        -   [filterArray](#filterarrayarray)
+        -   [generateNumbersArray](#generatenumbersarraylength-start-step)
+        -   [getNumberEnumKeys](#getnumberenumkeysnumberenum)
+        -   [getNumberEnumValues](#getnumberenumvaluesnumberenum)
+        -   [getRandomItemFromArray](#getrandomitemfromarrayarray-remove)
+        -   [groupArrayByObjectProperty](#grouparraybyobjectpropertyarray-attributegetter)
+        -   [objectsArrayToObject](#objectsarraytoobjectarray-attributegetter)
+        -   [objectToObjectsArray](#objecttoobjectsarrayobject)
+        -   [sortArrayByObjectProperty](#sortarraybyobjectpropertyarray-attributegetter-inverse)
+        -   [sortArrayByObjectPropertyLength](#sortarraybyobjectpropertylengtharray-attributegetter-inverse)
+        -   [splitArrayIntoChunks](#splitarrayintochunksarray-chunksize)
+        -   [uniquifyArray](#uniquifyarrayarray)
+        -   [uniquifyObjectsArray](#uniquifyobjectsarrayarray-attributegetter)
+    -   Structures
+        -   [Queue](#queuemaxlength)
+        -   [Stack](#queuemaxlength)
 
 ## Installation
+
 ```
 npm install @ionaru/array-utils
 ```
@@ -38,6 +40,7 @@ npm install @ionaru/array-utils
 ## Usage
 
 ### `filterArray(array)`
+
 Filter 'undefined' elements from an array.
 
 ```js
@@ -50,6 +53,7 @@ console.log(filteredArray); // [1, 2, 4, 3]
 ```
 
 ### `generateNumbersArray(length, start, step)`
+
 Generates an array of numbers, both "start" and "step" are optional and default to 1.
 
 ```js
@@ -72,6 +76,7 @@ console.log(array); // [-2, -5, -8, -12, -15]
 ```
 
 ### `getNumberEnumKeys(numberEnum)`
+
 Get the key names from a Typescript number-Enum.
 
 ```ts
@@ -93,6 +98,7 @@ console.log(enumKeys);
 ```
 
 ### `getNumberEnumValues(numberEnum)`
+
 Get the values from a Typescript number-Enum.
 
 ```ts
@@ -114,6 +120,7 @@ console.log(enumValues);
 ```
 
 ### `getRandomItemFromArray(array, remove)`
+
 Get a random item from an array and optionally remove it.
 
 ```js
@@ -131,17 +138,18 @@ console.log(myArray); // [1, 2] or [2, 3] or [1, 3]
 ```
 
 ### `groupArrayByObjectProperty(array, attributeGetter)`
+
 Group elements with the same object attributes together.
 
 ```js
 import { groupArrayByObjectProperty } from '@ionaru/array-utils';
 
 const myArray = [
-    {x: 1, y: 2},
-    {x: 2, y: 9},
-    {x: 1, y: 9},
-    {x: 5, y: 2},
-    {x: 4, y: 1},
+    { x: 1, y: 2 },
+    { x: 2, y: 9 },
+    { x: 1, y: 9 },
+    { x: 5, y: 2 },
+    { x: 4, y: 1 },
 ];
 
 const uniqueArrayOnX = groupArrayByObjectProperty(myArray, (element) => element.x);
@@ -163,6 +171,7 @@ console.log(uniqueArrayOnY);
 ```
 
 ### `objectsArrayToObject(array, attributeGetter)`
+
 Convert an array containing objects to an object containing objects.
 The return value of the `attributeGetter` parameter will be used as key for the objects.
 
@@ -170,8 +179,8 @@ The return value of the `attributeGetter` parameter will be used as key for the 
 import { objectsArrayToObject } from '@ionaru/array-utils';
 
 const myArray = [
-    {item: 'abc', price: 15},
-    {item: 'def', price: 10},
+    { item: 'abc', price: 15 },
+    { item: 'def', price: 10 },
 ];
 
 const object = objectsArrayToObject(myArray, (element) => element.item);
@@ -183,6 +192,7 @@ console.log(object);
 ```
 
 ### `objectToObjectsArray(object)`
+
 Convert an object containing objects to an array containing objects.
 The object key will be added to the array as an attribute named 'key'.
 
@@ -190,8 +200,8 @@ The object key will be added to the array as an attribute named 'key'.
 import { objectToObjectsArray } from '@ionaru/array-utils';
 
 const myObject = {
-    a: {item: 'abc', price: 15},
-    b: {item: 'def', price: 10},
+    a: { item: 'abc', price: 15 },
+    b: { item: 'def', price: 10 },
 };
 
 const array = objectToObjectsArray(myObject);
@@ -203,6 +213,7 @@ console.log(array);
 ```
 
 ### `sortArrayByObjectProperty(array, attributeGetter, inverse)`
+
 Sort an array of objects by the value in those objects.
 This function will sort the given array in-place.
 
@@ -210,8 +221,8 @@ This function will sort the given array in-place.
 import { sortArrayByObjectProperty } from '@ionaru/array-utils';
 
 const myArray = [
-    {item: 'abc', price: 15},
-    {item: 'def', price: 10},
+    { item: 'abc', price: 15 },
+    { item: 'def', price: 10 },
 ];
 
 sortArrayByObjectProperty(myArray, (element) => element.price);
@@ -223,6 +234,7 @@ console.log(myArray);
 ```
 
 ### `sortArrayByObjectPropertyLength(array, attributeGetter, inverse)`
+
 Sort an array of objects by the length of a value in those objects.
 This function will sort the given array in-place.
 
@@ -230,8 +242,8 @@ This function will sort the given array in-place.
 import { sortArrayByObjectPropertyLength } from '@ionaru/array-utils';
 
 const myArray = [
-    {user: 7, photos: [1, 6, 8]},
-    {user: 9, photos: [3, 7]},
+    { user: 7, photos: [1, 6, 8] },
+    { user: 9, photos: [3, 7] },
 ];
 
 sortArrayByObjectPropertyLength(myArray, (element) => element.photos);
@@ -243,6 +255,7 @@ console.log(myArray);
 ```
 
 ### `splitArrayIntoChunks(array, chunkSize)`
+
 Split an array into chunks of the given size.
 
 ```js
@@ -260,6 +273,7 @@ console.log(chunks);
 ```
 
 ### `uniquifyArray(array)`
+
 Filter duplicate values from an array.
 
 ```js
@@ -272,17 +286,18 @@ console.log(uniqueArray); // [1, 2, 3, 6, 7]
 ```
 
 ### `uniquifyObjectsArray(array, attributeGetter)`
+
 Filter duplicate object attributes from an array.
 
 ```js
 import { uniquifyObjectsArray } from '@ionaru/array-utils';
 
 const myArray = [
-    {x: 1, y: 2},
-    {x: 2, y: 9},
-    {x: 1, y: 9},
-    {x: 5, y: 2},
-    {x: 4, y: 1},
+    { x: 1, y: 2 },
+    { x: 2, y: 9 },
+    { x: 1, y: 9 },
+    { x: 5, y: 2 },
+    { x: 4, y: 1 },
 ];
 
 const uniqueArrayOnX = uniquifyObjectsArray(myArray, (element) => element.x);
@@ -293,12 +308,13 @@ console.log(uniqueArrayOnY); // [{x: 1, y: 2}, {x: 1, y: 9}, {x: 4, y: 1}]
 ```
 
 ### `Queue(maxLength)`
+
 A typed Queue implementation.
 
 ```ts
 import { Queue } from '@ionaru/array-utils';
 
-new queue = new Queue<string>(20);
+new queue() = new Queue<string>(20);
 queue.enqueue('Some value');
 queue.dequeue(); // returns 'Some value' and deleted it from the queue
 
@@ -308,12 +324,13 @@ queue.peek(); // returns 'Some value', but does not delete it.
 ```
 
 ### `Stack(maxLength)`
+
 A typed Stack implementation.
 
 ```ts
 import { Stack } from '@ionaru/array-utils';
 
-new stack = new Stack<string>(20);
+new stack() = new Stack<string>(20);
 stack.push('Some value');
 stack.pop(); // returns 'Some value' and deleted it from the stack
 

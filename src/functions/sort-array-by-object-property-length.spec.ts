@@ -3,11 +3,11 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { sortArrayByObjectPropertyLength } from './sort-array-by-object-property-length.js';
 
 class MyCustomClass {
-    public constructor(public readonly length: number) { }
+    public constructor(public readonly length: number) {}
 }
 
 describe('sortArrayByObjectPropertyLength', () => {
-    let unsortedArray: Array<{ value: { length: number; }; }>;
+    let unsortedArray: Array<{ value: { length: number } }>;
 
     beforeEach(() => {
         unsortedArray = [
@@ -30,14 +30,21 @@ describe('sortArrayByObjectPropertyLength', () => {
     it('reverse sorting an array with only one value', () => {
         expect.assertions(1);
         const array = [{ value: 'a' }];
-        sortArrayByObjectPropertyLength([{ value: 'a' }], (element) => element.value, true);
+        sortArrayByObjectPropertyLength(
+            [{ value: 'a' }],
+            (element) => element.value,
+            true,
+        );
 
         expect(array).toStrictEqual([{ value: 'a' }]);
     });
 
     it('sorting an array by object property', () => {
         expect.assertions(1);
-        sortArrayByObjectPropertyLength(unsortedArray, (element) => element.value);
+        sortArrayByObjectPropertyLength(
+            unsortedArray,
+            (element) => element.value,
+        );
 
         expect(unsortedArray).toStrictEqual([
             { value: 'a' },
@@ -50,7 +57,11 @@ describe('sortArrayByObjectPropertyLength', () => {
 
     it('reverse sorting an array by object property', () => {
         expect.assertions(1);
-        sortArrayByObjectPropertyLength(unsortedArray, (element) => element.value, true);
+        sortArrayByObjectPropertyLength(
+            unsortedArray,
+            (element) => element.value,
+            true,
+        );
 
         expect(unsortedArray).toStrictEqual([
             { value: 'aaaaa' },
@@ -70,7 +81,10 @@ describe('sortArrayByObjectPropertyLength', () => {
             { value: ['a', 'a', 'a', 'a', 'a'] },
             { value: ['a', 'a', 'a'] },
         ];
-        sortArrayByObjectPropertyLength(unsortedArrayOfArrays, (element) => element.value);
+        sortArrayByObjectPropertyLength(
+            unsortedArrayOfArrays,
+            (element) => element.value,
+        );
 
         expect(unsortedArrayOfArrays).toStrictEqual([
             { value: ['a'] },
@@ -90,7 +104,10 @@ describe('sortArrayByObjectPropertyLength', () => {
             { length: 5 },
             { length: 3 },
         ];
-        sortArrayByObjectPropertyLength(unsortedArrayWithCustomObjects, (element) => element);
+        sortArrayByObjectPropertyLength(
+            unsortedArrayWithCustomObjects,
+            (element) => element,
+        );
 
         expect(unsortedArrayWithCustomObjects).toStrictEqual([
             { length: 1 },
@@ -117,7 +134,10 @@ describe('sortArrayByObjectPropertyLength', () => {
             myCustomClass5,
             myCustomClass3,
         ];
-        sortArrayByObjectPropertyLength(unsortedArrayWithCustomObjects, (element) => element);
+        sortArrayByObjectPropertyLength(
+            unsortedArrayWithCustomObjects,
+            (element) => element,
+        );
 
         expect(unsortedArrayWithCustomObjects).toStrictEqual([
             myCustomClass1,

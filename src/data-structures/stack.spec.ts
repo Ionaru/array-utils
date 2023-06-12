@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest';
 import { Stack } from './stack.js';
 
 describe('stack', () => {
-
     it('has length 0 by default', () => {
         expect.assertions(2);
         const stack = new Stack();
@@ -37,24 +36,31 @@ describe('stack', () => {
 
     it('throws an error when created using zero length', () => {
         expect.assertions(1);
-        expect(() => new Stack(0)).toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Stack(0)).toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
 
     it('throws an error when created using a negative length', () => {
         expect.assertions(1);
-        expect(() => new Stack(-1)).toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Stack(-1)).toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
 
     it('throws an error when created using a non-integer length', () => {
         expect.assertions(1);
-        expect(() => new Stack(1.1)).toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Stack(1.1)).toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
 
     it('does not throw an error when created using undefined length', () => {
         expect.assertions(1);
-        expect(() => new Stack(undefined)).not.toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Stack(undefined)).not.toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
-
 
     it('can stack a value', () => {
         expect.assertions(1);
@@ -177,5 +183,4 @@ describe('stack', () => {
         expect(stack.pop()).toBe(2);
         expect(stack.pop()).toBe(1);
     });
-
 });

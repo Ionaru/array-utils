@@ -15,11 +15,7 @@
         "outDir": "dist",
         "sourceMap": true,
         "target": "es2021",
-        "typeRoots": [
-            "node_modules/@types"
-        ]
+        "typeRoots": ["node_modules/@types"]
     },
-    "files": [
-        "src/index.ts"
-    ]
+    "files": ["src/index.ts"]
 }

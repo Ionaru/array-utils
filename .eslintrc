@@ -3,9 +3,7 @@
         "project": "tsconfig.eslint.json",
         "sourceType": "module"
     },
-    "extends": [
-        "@ionaru"
-    ],
+    "extends": ["@ionaru", "prettier"],
     "rules": {
         "import/no-unresolved": "off",
         "unicorn/no-array-push-push": "off"

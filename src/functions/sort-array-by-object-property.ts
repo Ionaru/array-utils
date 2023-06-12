@@ -6,7 +6,9 @@ const checkIfEqualTypes = (left: any, right: any): void => {
     }
 
     if (typeof left !== typeof right) {
-        throw new TypeError(`Unable to compare different types: '${left}' (${typeof left}) and '${right}' (${typeof right})`);
+        throw new TypeError(
+            `Unable to compare different types: '${left}' (${typeof left}) and '${right}' (${typeof right})`,
+        );
     }
 };
 
@@ -16,8 +18,11 @@ const checkIfEqualTypes = (left: any, right: any): void => {
  * @param attributeGetter - A function to fetch the property from the object.
  * @param inverse - Inverse the output (descending).
  */
-export const sortArrayByObjectProperty = <T>(array: T[], attributeGetter: (item: T) => SortableProperty, inverse = false): void => {
-
+export const sortArrayByObjectProperty = <T>(
+    array: T[],
+    attributeGetter: (item: T) => SortableProperty,
+    inverse = false,
+): void => {
     const compare = (a: any, b: any) => {
         let left = attributeGetter(a);
         let right = attributeGetter(b);

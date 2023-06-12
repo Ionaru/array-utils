@@ -1,12 +1,14 @@
 export abstract class Tube<T> {
-
     protected readonly tubeArray: T[] = [];
 
-    public constructor(
-        public readonly maxLength?: number,
-    ) {
-        if (this.maxLength !== undefined && (this.maxLength < 1 || !Number.isInteger(this.maxLength))) {
-            throw new Error('maxLength must be an integer greater than zero when defined.');
+    public constructor(public readonly maxLength?: number) {
+        if (
+            this.maxLength !== undefined &&
+            (this.maxLength < 1 || !Number.isInteger(this.maxLength))
+        ) {
+            throw new Error(
+                'maxLength must be an integer greater than zero when defined.',
+            );
         }
     }
 

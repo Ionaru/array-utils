@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest';
 import * as index from './index.js';
 
 describe('export tests', () => {
-
     it('must export the expected amount of functions', () => {
         expect.assertions(1);
         expect(Object.entries(index)).toHaveLength(15);

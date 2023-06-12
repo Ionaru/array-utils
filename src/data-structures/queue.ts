@@ -1,7 +1,6 @@
 import { Tube } from './tube.js';
 
 export class Queue<T> extends Tube<T> {
-
     // Aliases
     public enqueue = this.addFunction;
     public dequeue = this.removeFunction;

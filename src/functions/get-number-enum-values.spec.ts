@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
-import { getNumberEnumKeys, getNumberEnumValues } from './get-number-enum-values.js';
+import {
+    getNumberEnumKeys,
+    getNumberEnumValues,
+} from './get-number-enum-values.js';
 
 enum MyNumberEnum {
     VALUE_ZERO,
@@ -15,31 +18,20 @@ enum MyOneIndexedNumberEnum {
 }
 
 describe('getNumberEnumKeys', () => {
-
     it('zero-indexed enum', () => {
         expect.assertions(1);
         const values = getNumberEnumKeys(MyNumberEnum);
-        expect(values).toStrictEqual([
-            'VALUE_ZERO',
-            'VALUE_ONE',
-            'VALUE_TWO',
-        ]);
+        expect(values).toStrictEqual(['VALUE_ZERO', 'VALUE_ONE', 'VALUE_TWO']);
     });
 
     it('one-indexed enum', () => {
         expect.assertions(1);
         const values = getNumberEnumKeys(MyOneIndexedNumberEnum);
-        expect(values).toStrictEqual([
-            'VALUE_ONE',
-            'VALUE_TWO',
-            'VALUE_THREE',
-        ]);
+        expect(values).toStrictEqual(['VALUE_ONE', 'VALUE_TWO', 'VALUE_THREE']);
     });
-
 });
 
 describe('getNumberEnumValues', () => {
-
     it('zero-indexed enum', () => {
         expect.assertions(1);
         const values = getNumberEnumValues(MyNumberEnum);
@@ -59,5 +51,4 @@ describe('getNumberEnumValues', () => {
             MyOneIndexedNumberEnum.VALUE_THREE,
         ]);
     });
-
 });

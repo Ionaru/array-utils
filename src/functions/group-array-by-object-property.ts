@@ -4,14 +4,13 @@
  * @param attributeGetter - A function for getting the attribute to group on.
  */
 export const groupArrayByObjectProperty = <T extends Record<string, any>>(
-    array: T[], attributeGetter: (item: T) => keyof any,
-): Record<keyof any, T[]> => array.reduce(
-        (previous, current) => {
-            const value = attributeGetter(current);
-            return {
-                ...previous,
-                [value]: [...(previous[value] || []), current],
-            };
-        },
-    {} as Record<keyof any, T[]>,
-    );
+    array: T[],
+    attributeGetter: (item: T) => keyof any,
+): Record<keyof any, T[]> =>
+    array.reduce((previous, current) => {
+        const value = attributeGetter(current);
+        return {
+            ...previous,
+            [value]: [...(previous[value] || []), current],
+        };
+    }, {} as Record<keyof any, T[]>);

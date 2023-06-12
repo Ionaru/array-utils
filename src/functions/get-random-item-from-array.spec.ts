@@ -1,4 +1,4 @@
-import {  describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { getRandomItemFromArray } from './get-random-item-from-array.js';
 
@@ -23,7 +23,7 @@ describe('getRandomItemFromArray', () => {
         expect(array).toHaveLength(4);
     });
 
-    it ('should throw an error when the array is empty', () => {
+    it('should throw an error when the array is empty', () => {
         expect.assertions(1);
 
         const array: number[] = [];

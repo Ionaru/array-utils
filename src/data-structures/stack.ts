@@ -1,7 +1,6 @@
 import { Tube } from './tube.js';
 
 export class Stack<T> extends Tube<T> {
-
     // Aliases
     public push = this.addFunction;
     public pop = this.removeFunction;

@@ -5,9 +5,10 @@
  * @param inverse - Inverse the output (descending).
  */
 export const sortArrayByObjectPropertyLength = <T>(
-    array: T[], attributeGetter: (item: T) => { length: number; }, inverse = false,
+    array: T[],
+    attributeGetter: (item: T) => { length: number },
+    inverse = false,
 ): void => {
-
     const compare = (a: any, b: any) => {
         const left = attributeGetter(a).length;
         const right = attributeGetter(b).length;

@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { sortArrayByObjectProperty } from './sort-array-by-object-property.js';
 
 describe('sortArrayByObjectProperty', () => {
-    let unsortedArray: Array<{ value: number; }>;
+    let unsortedArray: Array<{ value: number }>;
 
     beforeEach(() => {
         unsortedArray = [
@@ -46,7 +46,11 @@ describe('sortArrayByObjectProperty', () => {
 
     it('reverse sorting an array by object property', () => {
         expect.assertions(1);
-        sortArrayByObjectProperty(unsortedArray, (element) => element.value, true);
+        sortArrayByObjectProperty(
+            unsortedArray,
+            (element) => element.value,
+            true,
+        );
 
         expect(unsortedArray).toStrictEqual([
             { value: 4 },
@@ -67,7 +71,10 @@ describe('sortArrayByObjectProperty', () => {
             { value: 1 },
         ];
 
-        sortArrayByObjectProperty(unsortedArrayWithEqualValue, (element) => element.value);
+        sortArrayByObjectProperty(
+            unsortedArrayWithEqualValue,
+            (element) => element.value,
+        );
 
         expect(unsortedArrayWithEqualValue).toStrictEqual([
             { value: 1 },
@@ -88,7 +95,10 @@ describe('sortArrayByObjectProperty', () => {
             { value: 2 },
         ];
 
-        sortArrayByObjectProperty(unsortedArrayWithEqualValues, (element) => element.value);
+        sortArrayByObjectProperty(
+            unsortedArrayWithEqualValues,
+            (element) => element.value,
+        );
 
         expect(unsortedArrayWithEqualValues).toStrictEqual([
             { value: 2 },
@@ -109,7 +119,11 @@ describe('sortArrayByObjectProperty', () => {
             { value: 2 },
         ];
 
-        sortArrayByObjectProperty(unsortedArrayWithEqualValues, (element) => element.value, true);
+        sortArrayByObjectProperty(
+            unsortedArrayWithEqualValues,
+            (element) => element.value,
+            true,
+        );
 
         expect(unsortedArrayWithEqualValues).toStrictEqual([
             { value: 2 },
@@ -130,7 +144,11 @@ describe('sortArrayByObjectProperty', () => {
             { value: 1 },
         ];
 
-        sortArrayByObjectProperty(unsortedArrayWithEqualValue, (element) => element.value, true);
+        sortArrayByObjectProperty(
+            unsortedArrayWithEqualValue,
+            (element) => element.value,
+            true,
+        );
 
         expect(unsortedArrayWithEqualValue).toStrictEqual([
             { value: 4 },
@@ -153,8 +171,13 @@ describe('sortArrayByObjectProperty', () => {
 
         expect(() => {
             // @ts-expect-error Should throw an error.
-            sortArrayByObjectProperty(unsortedArrayWithUndefinedValue, (element) => element.value);
-        }).toThrow(/^Unable to compare values '(3|undefined)' and '(3|undefined)'$/);
+            sortArrayByObjectProperty(
+                unsortedArrayWithUndefinedValue,
+                (element) => element.value,
+            );
+        }).toThrow(
+            /^Unable to compare values '(3|undefined)' and '(3|undefined)'$/,
+        );
     });
 
     it('attempting to sort a string value in an array must throw an error', () => {
@@ -168,8 +191,13 @@ describe('sortArrayByObjectProperty', () => {
         ];
 
         expect(() => {
-            sortArrayByObjectProperty(unsortedArrayWithStringValue, (element) => element.value);
-        }).toThrow(/^Unable to compare different types: '[23]' \((number|string)\) and '[23]' \((number|string)\)$/);
+            sortArrayByObjectProperty(
+                unsortedArrayWithStringValue,
+                (element) => element.value,
+            );
+        }).toThrow(
+            /^Unable to compare different types: '[23]' \((number|string)\) and '[23]' \((number|string)\)$/,
+        );
     });
 
     it('sort an array with string values', () => {
@@ -182,7 +210,10 @@ describe('sortArrayByObjectProperty', () => {
             { value: '1' },
         ];
 
-        sortArrayByObjectProperty(unsortedArrayWithStringValues, (element) => element.value);
+        sortArrayByObjectProperty(
+            unsortedArrayWithStringValues,
+            (element) => element.value,
+        );
 
         expect(unsortedArrayWithStringValues).toStrictEqual([
             { value: '1' },
@@ -203,7 +234,11 @@ describe('sortArrayByObjectProperty', () => {
             { value: { value: 1 } },
         ];
 
-        sortArrayByObjectProperty(unsortedArrayWithEqualValue, (element) => element.value.value, true);
+        sortArrayByObjectProperty(
+            unsortedArrayWithEqualValue,
+            (element) => element.value.value,
+            true,
+        );
 
         expect(unsortedArrayWithEqualValue).toStrictEqual([
             { value: { value: 4 } },
@@ -224,7 +259,11 @@ describe('sortArrayByObjectProperty', () => {
             { value: { value: { value: 1 } } },
         ];
 
-        sortArrayByObjectProperty(unsortedArrayWithEqualValue, (element) => element.value.value.value, true);
+        sortArrayByObjectProperty(
+            unsortedArrayWithEqualValue,
+            (element) => element.value.value.value,
+            true,
+        );
 
         expect(unsortedArrayWithEqualValue).toStrictEqual([
             { value: { value: { value: 4 } } },

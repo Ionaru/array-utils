@@ -4,11 +4,9 @@ Hey, welcome to the party! 🎉
 
 Thank you so much for your interest in contributing to array-utils!
 
-
 ## Asking questions, suggesting wonderful ideas or reporting bugs
 
 You can [submit an issue️](https://github.com/Ionaru/array-utils/issues) on this GitHub repository.
-
 
 ## Coding
 
@@ -24,7 +22,6 @@ sudo apt-get install -y nodejs
 ```
 
 For other systems, please find information on [the official Node.js website](https://nodejs.org/en/download/).
-
 
 ### 🏗️ Installation
 
@@ -43,12 +40,12 @@ npm install
 
 Yay! You are ready! 🍾
 
-
 ### ⤴️ Pull requests
 
 Please make sure any code you submit is compliant and compatible with this repository's [license](./LICENSE).
 
 #### Your first pull request
+
 1. [Create a fork of this project](https://github.com/Ionaru/array-utils/fork).
 2. Clone your fork: `git clone https://github.com/YOUR_USERNAME/array-utils.git`.
 3. Add the original repository as remote to keep it up-to-date: `git remote add upstream https://github.com/Ionaru/array-utils.git`.
@@ -61,7 +58,9 @@ Please make sure any code you submit is compliant and compatible with this repos
 10. Choose the correct branches, add a description and submit your pull request!
 
 #### Continuing development
+
 To create more pull requests, please follow the steps below:
+
 1. Go back to the master branch: `git checkout master`.
 2. Fetch the upstream changes: `git fetch upstream`.
 3. Update the master branch with upstream changes: `git merge upstream/master`.

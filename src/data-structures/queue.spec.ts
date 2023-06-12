@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest';
 import { Queue } from './queue.js';
 
 describe('queue', () => {
-
     it('has length 0 by default', () => {
         expect.assertions(2);
         const queue = new Queue();
@@ -37,22 +36,30 @@ describe('queue', () => {
 
     it('throws an error when created using zero length', () => {
         expect.assertions(1);
-        expect(() => new Queue(0)).toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Queue(0)).toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
 
     it('throws an error when created using a negative length', () => {
         expect.assertions(1);
-        expect(() => new Queue(-1)).toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Queue(-1)).toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
 
     it('throws an error when created using a non-integer length', () => {
         expect.assertions(1);
-        expect(() => new Queue(1.1)).toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Queue(1.1)).toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
 
     it('does not throw an error when created using undefined length', () => {
         expect.assertions(1);
-        expect(() => new Queue(undefined)).not.toThrow('maxLength must be an integer greater than zero when defined.');
+        expect(() => new Queue(undefined)).not.toThrow(
+            'maxLength must be an integer greater than zero when defined.',
+        );
     });
 
     it('can queue a value', () => {
@@ -176,5 +183,4 @@ describe('queue', () => {
         expect(queue.dequeue()).toBe(1);
         expect(queue.dequeue()).toBe(2);
     });
-
 });
