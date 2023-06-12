@@ -1,4 +1,6 @@
-import { sortArrayByObjectProperty } from './sort-array-by-object-property';
+import { beforeEach, describe, expect, it } from 'vitest';
+
+import { sortArrayByObjectProperty } from './sort-array-by-object-property.js';
 
 describe('sortArrayByObjectProperty', () => {
     let unsortedArray: Array<{ value: number; }>;

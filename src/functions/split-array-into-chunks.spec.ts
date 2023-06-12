@@ -1,4 +1,6 @@
-import { splitArrayIntoChunks } from './split-array-into-chunks';
+import { describe, expect, it } from 'vitest';
+
+import { splitArrayIntoChunks } from './split-array-into-chunks.js';
 
 describe('splitArrayIntoChunks', () => {
 

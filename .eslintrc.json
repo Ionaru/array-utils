@@ -1,8 +1,4 @@
 {
-    "env": {
-        "es6": true,
-        "node": true
-    },
     "parserOptions": {
         "project": "tsconfig.eslint.json",
         "sourceType": "module"
@@ -11,7 +7,7 @@
         "@ionaru"
     ],
     "rules": {
-        "import/extensions": "off",
+        "import/no-unresolved": "off",
         "unicorn/no-array-push-push": "off"
     }
 }

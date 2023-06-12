@@ -1,4 +1,6 @@
-import { filterArray } from './filter-array';
+import { describe, expect, it } from 'vitest';
+
+import { filterArray } from './filter-array.js';
 
 describe('filterArray', () => {
 

@@ -1,4 +1,6 @@
-import { sortArrayByObjectPropertyLength } from './sort-array-by-object-property-length';
+import { beforeEach, describe, expect, it } from 'vitest';
+
+import { sortArrayByObjectPropertyLength } from './sort-array-by-object-property-length.js';
 
 class MyCustomClass {
     public constructor(public readonly length: number) { }

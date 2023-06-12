@@ -1,4 +1,6 @@
-import { objectsArrayToObject, objectToObjectsArray } from './objects-array-to-object';
+import { describe, expect, it } from 'vitest';
+
+import { objectsArrayToObject, objectToObjectsArray } from './objects-array-to-object.js';
 
 describe('objectsArrayToObject', () => {
     it('convert array to object', () => {

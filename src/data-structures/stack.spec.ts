@@ -1,4 +1,6 @@
-import { Stack } from './stack';
+import { describe, expect, it } from 'vitest';
+
+import { Stack } from './stack.js';
 
 describe('stack', () => {
 

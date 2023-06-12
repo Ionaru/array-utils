@@ -1,4 +1,6 @@
-import { groupArrayByObjectProperty } from './group-array-by-object-property';
+import { describe, expect, it } from 'vitest';
+
+import { groupArrayByObjectProperty } from './group-array-by-object-property.js';
 
 describe('groupArrayByObjectProperty', () => {
 

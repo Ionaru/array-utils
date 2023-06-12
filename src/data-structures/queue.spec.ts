@@ -1,4 +1,6 @@
-import { Queue } from './queue';
+import { describe, expect, it } from 'vitest';
+
+import { Queue } from './queue.js';
 
 describe('queue', () => {
 

@@ -1,4 +1,6 @@
-import * as index from './index';
+import { describe, expect, it } from 'vitest';
+
+import * as index from './index.js';
 
 describe('export tests', () => {
 

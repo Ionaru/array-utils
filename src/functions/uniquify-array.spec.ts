@@ -1,5 +1,7 @@
 /* eslint-disable sonarjs/no-identical-functions */
-import { uniquifyArray, uniquifyObjectsArray } from './uniquify-array';
+import { describe, expect, it } from 'vitest';
+
+import { uniquifyArray, uniquifyObjectsArray } from './uniquify-array.js';
 
 describe('uniquifyArray', () => {
 

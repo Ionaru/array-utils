@@ -1,4 +1,6 @@
-import { generateNumbersArray } from './generate-numbers-array';
+import { describe, expect, it } from 'vitest';
+
+import { generateNumbersArray } from './generate-numbers-array.js';
 
 describe('generateNumbersArray', () => {
     it.each([

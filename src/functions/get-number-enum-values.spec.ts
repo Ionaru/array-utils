@@ -1,4 +1,6 @@
-import { getNumberEnumKeys, getNumberEnumValues } from './get-number-enum-values';
+import { describe, expect, it } from 'vitest';
+
+import { getNumberEnumKeys, getNumberEnumValues } from './get-number-enum-values.js';
 
 enum MyNumberEnum {
     VALUE_ZERO,

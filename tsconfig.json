@@ -10,17 +10,11 @@
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "removeComments": false,
-        "resolveJsonModule": true,
-        "lib": [
-            "esnext",
-            "es2021",
-            "es2020",
-        ],
-        "module": "commonjs",
+        "module": "es2020",
         "moduleResolution": "node",
         "outDir": "dist",
         "sourceMap": true,
-        "target": "es2019",
+        "target": "es2021",
         "typeRoots": [
             "node_modules/@types"
         ]

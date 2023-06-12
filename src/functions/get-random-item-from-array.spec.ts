@@ -1,4 +1,6 @@
-import { getRandomItemFromArray } from './get-random-item-from-array';
+import {  describe, expect, it } from 'vitest';
+
+import { getRandomItemFromArray } from './get-random-item-from-array.js';
 
 describe('getRandomItemFromArray', () => {
     it('should return a random item from an array', () => {

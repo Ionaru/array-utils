@@ -1,4 +1,4 @@
-import { Tube } from './tube';
+import { Tube } from './tube.js';
 
 export class Queue<T> extends Tube<T> {
 
@@ -19,6 +19,6 @@ export class Queue<T> extends Tube<T> {
     }
 
     protected peekFunction(): T | undefined {
-        return this.tubeArray[0];
+        return this.tubeArray.at(0);
     }
 }

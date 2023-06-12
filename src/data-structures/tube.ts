@@ -11,7 +11,7 @@ export abstract class Tube<T> {
     }
 
     public get isEmpty(): boolean {
-        return !this.length;
+        return this.length === 0;
     }
 
     public get isFull(): boolean {
