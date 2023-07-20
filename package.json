@@ -24,19 +24,19 @@
     "repository": "github:Ionaru/array-utils",
     "license": "MIT",
     "devDependencies": {
-        "@ionaru/eslint-config": "^11.0.0",
-        "@types/node": "^20.2.5",
-        "@typescript-eslint/eslint-plugin": "^5.59.9",
-        "@vitest/coverage-v8": "^0.32.0",
-        "eslint": "^8.42.0",
+        "@ionaru/eslint-config": "^12.0.0",
+        "@types/node": "^20.4.2",
+        "@typescript-eslint/eslint-plugin": "^6.1.0",
+        "@vitest/coverage-v8": "^0.33.0",
+        "eslint": "^8.45.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-prefer-arrow": "^1.2.3",
         "eslint-plugin-sonarjs": "^0.19.0",
-        "eslint-plugin-unicorn": "^47.0.0",
-        "eslint-plugin-vitest": "^0.2.5",
-        "prettier": "^2.8.8",
-        "typescript": "~5.0.0",
-        "vitest": "^0.32.0"
+        "eslint-plugin-unicorn": "^48.0.0",
+        "eslint-plugin-vitest": "^0.2.6",
+        "prettier": "^3.0.0",
+        "typescript": "~5.1.6",
+        "vitest": "^0.33.0"
     }
 }

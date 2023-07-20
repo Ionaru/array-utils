@@ -2,9 +2,11 @@ import { Tube } from './tube.js';
 
 export class Queue<T> extends Tube<T> {
     // Aliases
-    public enqueue = this.addFunction;
-    public dequeue = this.removeFunction;
-    public peek = this.peekFunction;
+    public enqueue = (value: T) => {
+        this.addFunction(value);
+    };
+    public dequeue = () => this.removeFunction();
+    public peek = () => this.peekFunction();
 
     protected addFunction(value: T): void {
         if (this.isFull) {

@@ -124,7 +124,9 @@ describe('queue', () => {
         expect.assertions(1);
         const queue = new Queue(1);
         queue.enqueue('a');
-        expect(() => queue.enqueue('b')).toThrow('Queue is full!');
+        expect(() => {
+            queue.enqueue('b');
+        }).toThrow('Queue is full!');
     });
 
     it('should return undefined when dequeuing from an empty queue', () => {

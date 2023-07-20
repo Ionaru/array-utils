@@ -124,7 +124,9 @@ describe('stack', () => {
         expect.assertions(1);
         const stack = new Stack(1);
         stack.push('a');
-        expect(() => stack.push('b')).toThrow('Stack is full!');
+        expect(() => {
+            stack.push('b');
+        }).toThrow('Stack is full!');
     });
 
     it('should return undefined when popping from an empty stack', () => {

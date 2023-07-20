@@ -1,6 +1,9 @@
 type SortableProperty = string | number | Date;
 
-const checkIfEqualTypes = (left: any, right: any): void => {
+const checkIfEqualTypes = (
+    left: SortableProperty,
+    right: SortableProperty,
+): void => {
     if (left === undefined || right === undefined) {
         throw new Error(`Unable to compare values '${left}' and '${right}'`);
     }
@@ -23,7 +26,7 @@ export const sortArrayByObjectProperty = <T>(
     attributeGetter: (item: T) => SortableProperty,
     inverse = false,
 ): void => {
-    const compare = (a: any, b: any) => {
+    const compare = (a: T, b: T) => {
         let left = attributeGetter(a);
         let right = attributeGetter(b);
 

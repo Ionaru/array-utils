@@ -9,7 +9,7 @@ export const sortArrayByObjectPropertyLength = <T>(
     attributeGetter: (item: T) => { length: number },
     inverse = false,
 ): void => {
-    const compare = (a: any, b: any) => {
+    const compare = (a: T, b: T) => {
         const left = attributeGetter(a).length;
         const right = attributeGetter(b).length;
         return inverse ? right - left : left - right;

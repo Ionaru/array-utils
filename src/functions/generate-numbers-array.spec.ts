@@ -11,7 +11,7 @@ describe('generateNumbersArray', () => {
         [10, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
     ])('an array with length %p', (length, expectedResult) => {
         expect.assertions(1);
-        const result = generateNumbersArray(length as number);
+        const result = generateNumbersArray(length);
         expect(result).toStrictEqual(expectedResult);
     });
 
