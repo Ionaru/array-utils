@@ -15,6 +15,7 @@ export const groupArrayByObjectProperty = <
     for (const item of array) {
         const value = attributeGetter(item);
 
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (!result[value]) {
             result[value] = [];
         }

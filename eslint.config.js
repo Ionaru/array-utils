@@ -9,10 +9,13 @@ import vitest from "@vitest/eslint-plugin";
 
 export default typescriptEslint.config(
     {
+        ignores: ["coverage"],
+    },
+    {
         files: ["src/**/*.ts"],
         extends: [
             eslint.configs.recommended,
-            ...typescriptEslint.configs.recommendedTypeChecked,
+            ...typescriptEslint.configs.strictTypeChecked,
             ...typescriptEslint.configs.stylisticTypeChecked,
             eslintPluginUnicorn.configs.recommended,
             eslintPluginSonarJS.configs.recommended,
