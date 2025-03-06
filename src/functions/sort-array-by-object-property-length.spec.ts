@@ -1,45 +1,45 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from "vitest";
 
-import { sortArrayByObjectPropertyLength } from './sort-array-by-object-property-length.js';
+import { sortArrayByObjectPropertyLength } from "./sort-array-by-object-property-length.js";
 
 class MyCustomClass {
     public constructor(public readonly length: number) {}
 }
 
-describe('sortArrayByObjectPropertyLength', () => {
+describe("sortArrayByObjectPropertyLength", () => {
     let unsortedArray: Array<{ value: { length: number } }>;
 
     beforeEach(() => {
         unsortedArray = [
-            { value: 'aaaa' },
-            { value: 'aa' },
-            { value: 'a' },
-            { value: 'aaaaa' },
-            { value: 'aaa' },
+            { value: "aaaa" },
+            { value: "aa" },
+            { value: "a" },
+            { value: "aaaaa" },
+            { value: "aaa" },
         ];
     });
 
-    it('sorting an array with only one value', () => {
+    it("sorting an array with only one value", () => {
         expect.assertions(1);
-        const array = [{ value: 'a' }];
+        const array = [{ value: "a" }];
         sortArrayByObjectPropertyLength(array, (element) => element.value);
 
-        expect(array).toStrictEqual([{ value: 'a' }]);
+        expect(array).toStrictEqual([{ value: "a" }]);
     });
 
-    it('reverse sorting an array with only one value', () => {
+    it("reverse sorting an array with only one value", () => {
         expect.assertions(1);
-        const array = [{ value: 'a' }];
+        const array = [{ value: "a" }];
         sortArrayByObjectPropertyLength(
-            [{ value: 'a' }],
+            [{ value: "a" }],
             (element) => element.value,
             true,
         );
 
-        expect(array).toStrictEqual([{ value: 'a' }]);
+        expect(array).toStrictEqual([{ value: "a" }]);
     });
 
-    it('sorting an array by object property', () => {
+    it("sorting an array by object property", () => {
         expect.assertions(1);
         sortArrayByObjectPropertyLength(
             unsortedArray,
@@ -47,15 +47,15 @@ describe('sortArrayByObjectPropertyLength', () => {
         );
 
         expect(unsortedArray).toStrictEqual([
-            { value: 'a' },
-            { value: 'aa' },
-            { value: 'aaa' },
-            { value: 'aaaa' },
-            { value: 'aaaaa' },
+            { value: "a" },
+            { value: "aa" },
+            { value: "aaa" },
+            { value: "aaaa" },
+            { value: "aaaaa" },
         ]);
     });
 
-    it('reverse sorting an array by object property', () => {
+    it("reverse sorting an array by object property", () => {
         expect.assertions(1);
         sortArrayByObjectPropertyLength(
             unsortedArray,
@@ -64,22 +64,22 @@ describe('sortArrayByObjectPropertyLength', () => {
         );
 
         expect(unsortedArray).toStrictEqual([
-            { value: 'aaaaa' },
-            { value: 'aaaa' },
-            { value: 'aaa' },
-            { value: 'aa' },
-            { value: 'a' },
+            { value: "aaaaa" },
+            { value: "aaaa" },
+            { value: "aaa" },
+            { value: "aa" },
+            { value: "a" },
         ]);
     });
 
-    it('can handle lists', () => {
+    it("can handle lists", () => {
         expect.assertions(1);
         const unsortedArrayOfArrays = [
-            { value: ['a', 'a', 'a', 'a'] },
-            { value: ['a', 'a'] },
-            { value: ['a'] },
-            { value: ['a', 'a', 'a', 'a', 'a'] },
-            { value: ['a', 'a', 'a'] },
+            { value: ["a", "a", "a", "a"] },
+            { value: ["a", "a"] },
+            { value: ["a"] },
+            { value: ["a", "a", "a", "a", "a"] },
+            { value: ["a", "a", "a"] },
         ];
         sortArrayByObjectPropertyLength(
             unsortedArrayOfArrays,
@@ -87,15 +87,15 @@ describe('sortArrayByObjectPropertyLength', () => {
         );
 
         expect(unsortedArrayOfArrays).toStrictEqual([
-            { value: ['a'] },
-            { value: ['a', 'a'] },
-            { value: ['a', 'a', 'a'] },
-            { value: ['a', 'a', 'a', 'a'] },
-            { value: ['a', 'a', 'a', 'a', 'a'] },
+            { value: ["a"] },
+            { value: ["a", "a"] },
+            { value: ["a", "a", "a"] },
+            { value: ["a", "a", "a", "a"] },
+            { value: ["a", "a", "a", "a", "a"] },
         ]);
     });
 
-    it('can handle custom objects', () => {
+    it("can handle custom objects", () => {
         expect.assertions(1);
         const unsortedArrayWithCustomObjects = [
             { length: 4 },
@@ -118,7 +118,7 @@ describe('sortArrayByObjectPropertyLength', () => {
         ]);
     });
 
-    it('can handle classes', () => {
+    it("can handle classes", () => {
         expect.assertions(1);
 
         const myCustomClass1 = new MyCustomClass(1);

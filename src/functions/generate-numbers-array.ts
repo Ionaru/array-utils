@@ -10,7 +10,7 @@ export const generateNumbersArray = (
     step = 1,
 ): number[] => {
     if (length < 0 || !Number.isInteger(length)) {
-        throw new RangeError('Invalid array length');
+        throw new RangeError("Invalid array length");
     }
 
     // If step === 0

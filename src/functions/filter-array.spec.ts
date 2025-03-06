@@ -1,9 +1,9 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from "vitest";
 
-import { filterArray } from './filter-array.js';
+import { filterArray } from "./filter-array.js";
 
-describe('filterArray', () => {
-    it('empty array', () => {
+describe("filterArray", () => {
+    it("empty array", () => {
         expect.assertions(1);
         const output = filterArray([]);
         expect(output).toStrictEqual([]);
@@ -31,31 +31,31 @@ describe('filterArray', () => {
             [1, 2, 3],
         ],
         [
-            [1, 2, 3, 'undefined'],
-            [1, 2, 3, 'undefined'],
+            [1, 2, 3, "undefined"],
+            [1, 2, 3, "undefined"],
         ],
 
         [
-            ['a', undefined, 'b'],
-            ['a', 'b'],
+            ["a", undefined, "b"],
+            ["a", "b"],
         ],
         [
-            [undefined, 'b', 'a'],
-            ['b', 'a'],
+            [undefined, "b", "a"],
+            ["b", "a"],
         ],
         [
-            ['b', undefined, 'a'],
-            ['b', 'a'],
+            ["b", undefined, "a"],
+            ["b", "a"],
         ],
         [
-            ['a', 'b', 'c', undefined],
-            ['a', 'b', 'c'],
+            ["a", "b", "c", undefined],
+            ["a", "b", "c"],
         ],
         [
-            ['a', 'b', 'c', 'undefined'],
-            ['a', 'b', 'c', 'undefined'],
+            ["a", "b", "c", "undefined"],
+            ["a", "b", "c", "undefined"],
         ],
-    ])('arrays with numbers', (input, expectedOutput) => {
+    ])("arrays with numbers", (input, expectedOutput) => {
         expect.assertions(1);
         const output = filterArray(input);
         expect(output).toStrictEqual(expectedOutput);

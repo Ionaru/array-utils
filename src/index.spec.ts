@@ -1,9 +1,9 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from "vitest";
 
-import * as index from './index.js';
+import * as index from "./index.js";
 
-describe('export tests', () => {
-    it('must export the expected amount of functions', () => {
+describe("export tests", () => {
+    it("must export the expected amount of functions", () => {
         expect.assertions(1);
         expect(Object.entries(index)).toHaveLength(15);
     });
@@ -23,8 +23,8 @@ describe('export tests', () => {
         index.uniquifyObjectsArray,
         index.Queue,
         index.Stack,
-    ])('must export %s', (key) => {
+    ])("must export %s", (key) => {
         expect.assertions(1);
-        expect(typeof key).toBe('function');
+        expect(typeof key).toBe("function");
     });
 });

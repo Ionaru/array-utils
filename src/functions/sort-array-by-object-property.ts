@@ -33,7 +33,7 @@ export const sortArrayByObjectProperty = <T>(
         checkIfEqualTypes(left, right);
 
         // We know the types are the same, but it's better to make absolutely sure.
-        if (typeof left === 'string' && typeof right === 'string') {
+        if (typeof left === "string" && typeof right === "string") {
             left = left.toUpperCase();
             right = right.toUpperCase();
         }

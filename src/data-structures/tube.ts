@@ -7,7 +7,7 @@ export abstract class Tube<T> {
             (this.maxLength < 1 || !Number.isInteger(this.maxLength))
         ) {
             throw new Error(
-                'maxLength must be an integer greater than zero when defined.',
+                "maxLength must be an integer greater than zero when defined.",
             );
         }
     }

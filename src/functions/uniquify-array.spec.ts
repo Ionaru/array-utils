@@ -1,10 +1,10 @@
 /* eslint-disable sonarjs/no-identical-functions */
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from "vitest";
 
-import { uniquifyArray, uniquifyObjectsArray } from './uniquify-array.js';
+import { uniquifyArray, uniquifyObjectsArray } from "./uniquify-array.js";
 
-describe('uniquifyArray', () => {
-    it('empty array', () => {
+describe("uniquifyArray", () => {
+    it("empty array", () => {
         expect.assertions(1);
         const output = uniquifyArray([]);
         expect(output).toStrictEqual([]);
@@ -24,37 +24,37 @@ describe('uniquifyArray', () => {
             [1, 2, 3],
             [1, 2, 3],
         ],
-    ])('arrays with numbers', (input, expectedOutput) => {
+    ])("arrays with numbers", (input, expectedOutput) => {
         expect.assertions(1);
         const output = uniquifyArray(input);
         expect(output).toStrictEqual(expectedOutput);
     });
 
     it.each([
-        [['a', 'a', 'a'], ['a']],
+        [["a", "a", "a"], ["a"]],
         [
-            ['a', 'b', 'a'],
-            ['a', 'b'],
+            ["a", "b", "a"],
+            ["a", "b"],
         ],
         [
-            ['b', 'b', 'a'],
-            ['b', 'a'],
+            ["b", "b", "a"],
+            ["b", "a"],
         ],
         [
-            ['a', 'b', 'c'],
-            ['a', 'b', 'c'],
+            ["a", "b", "c"],
+            ["a", "b", "c"],
         ],
-    ])('arrays with strings', (input, expectedOutput) => {
+    ])("arrays with strings", (input, expectedOutput) => {
         expect.assertions(1);
         const output = uniquifyArray(input);
         expect(output).toStrictEqual(expectedOutput);
     });
 });
 
-describe('uniquifyObjectsArray', () => {
-    it('empty array', () => {
+describe("uniquifyObjectsArray", () => {
+    it("empty array", () => {
         expect.assertions(1);
-        const output = uniquifyObjectsArray([], () => '');
+        const output = uniquifyObjectsArray([], () => "");
         expect(output).toStrictEqual([]);
     });
 
@@ -72,27 +72,27 @@ describe('uniquifyObjectsArray', () => {
             [{ x: 1 }, { x: 2 }, { x: 3 }],
             [{ x: 1 }, { x: 2 }, { x: 3 }],
         ],
-    ])('arrays with numbers', (input, expectedOutput) => {
+    ])("arrays with numbers", (input, expectedOutput) => {
         expect.assertions(1);
         const output = uniquifyObjectsArray(input, (element) => element.x);
         expect(output).toStrictEqual(expectedOutput);
     });
 
     it.each([
-        [[{ x: 'a' }, { x: 'a' }, { x: 'a' }], [{ x: 'a' }]],
+        [[{ x: "a" }, { x: "a" }, { x: "a" }], [{ x: "a" }]],
         [
-            [{ x: 'a' }, { x: 'b' }, { x: 'a' }],
-            [{ x: 'a' }, { x: 'b' }],
+            [{ x: "a" }, { x: "b" }, { x: "a" }],
+            [{ x: "a" }, { x: "b" }],
         ],
         [
-            [{ x: 'b' }, { x: 'b' }, { x: 'a' }],
-            [{ x: 'b' }, { x: 'a' }],
+            [{ x: "b" }, { x: "b" }, { x: "a" }],
+            [{ x: "b" }, { x: "a" }],
         ],
         [
-            [{ x: 'a' }, { x: 'b' }, { x: 'c' }],
-            [{ x: 'a' }, { x: 'b' }, { x: 'c' }],
+            [{ x: "a" }, { x: "b" }, { x: "c" }],
+            [{ x: "a" }, { x: "b" }, { x: "c" }],
         ],
-    ])('arrays with strings', (input, expectedOutput) => {
+    ])("arrays with strings", (input, expectedOutput) => {
         expect.assertions(1);
         const output = uniquifyObjectsArray(input, (element) => element.x);
         expect(output).toStrictEqual(expectedOutput);

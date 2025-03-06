@@ -1,8 +1,8 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from "vitest";
 
-import { sortArrayByObjectProperty } from './sort-array-by-object-property.js';
+import { sortArrayByObjectProperty } from "./sort-array-by-object-property.js";
 
-describe('sortArrayByObjectProperty', () => {
+describe("sortArrayByObjectProperty", () => {
     let unsortedArray: Array<{ value: number }>;
 
     beforeEach(() => {
@@ -15,7 +15,7 @@ describe('sortArrayByObjectProperty', () => {
         ];
     });
 
-    it('sorting an array with only one value', () => {
+    it("sorting an array with only one value", () => {
         expect.assertions(1);
         const array = [{ value: 3 }];
         sortArrayByObjectProperty(array, (element) => element.value);
@@ -23,7 +23,7 @@ describe('sortArrayByObjectProperty', () => {
         expect(array).toStrictEqual([{ value: 3 }]);
     });
 
-    it('reverse sorting an array with only one value', () => {
+    it("reverse sorting an array with only one value", () => {
         expect.assertions(1);
         const array = [{ value: 3 }];
         sortArrayByObjectProperty(array, (element) => element.value, true);
@@ -31,7 +31,7 @@ describe('sortArrayByObjectProperty', () => {
         expect(array).toStrictEqual([{ value: 3 }]);
     });
 
-    it('sorting an array by object property', () => {
+    it("sorting an array by object property", () => {
         expect.assertions(1);
         sortArrayByObjectProperty(unsortedArray, (element) => element.value);
 
@@ -44,7 +44,7 @@ describe('sortArrayByObjectProperty', () => {
         ]);
     });
 
-    it('reverse sorting an array by object property', () => {
+    it("reverse sorting an array by object property", () => {
         expect.assertions(1);
         sortArrayByObjectProperty(
             unsortedArray,
@@ -61,7 +61,7 @@ describe('sortArrayByObjectProperty', () => {
         ]);
     });
 
-    it('sort an array with some equal values', () => {
+    it("sort an array with some equal values", () => {
         expect.assertions(1);
         const unsortedArrayWithEqualValue = [
             { value: 2 },
@@ -85,7 +85,7 @@ describe('sortArrayByObjectProperty', () => {
         ]);
     });
 
-    it('sorting an array with only equal values', () => {
+    it("sorting an array with only equal values", () => {
         expect.assertions(1);
         const unsortedArrayWithEqualValues = [
             { value: 2 },
@@ -109,7 +109,7 @@ describe('sortArrayByObjectProperty', () => {
         ]);
     });
 
-    it('reverse sorting an array with only equal values', () => {
+    it("reverse sorting an array with only equal values", () => {
         expect.assertions(1);
         const unsortedArrayWithEqualValues = [
             { value: 2 },
@@ -134,7 +134,7 @@ describe('sortArrayByObjectProperty', () => {
         ]);
     });
 
-    it('reverse sort an array with some equal values', () => {
+    it("reverse sort an array with some equal values", () => {
         expect.assertions(1);
         const unsortedArrayWithEqualValue = [
             { value: 2 },
@@ -159,7 +159,7 @@ describe('sortArrayByObjectProperty', () => {
         ]);
     });
 
-    it('attempting to sort an undefined value in an array must throw an error', () => {
+    it("attempting to sort an undefined value in an array must throw an error", () => {
         expect.assertions(1);
         const unsortedArrayWithUndefinedValue = [
             { value: 2 },
@@ -180,12 +180,12 @@ describe('sortArrayByObjectProperty', () => {
         );
     });
 
-    it('attempting to sort a string value in an array must throw an error', () => {
+    it("attempting to sort a string value in an array must throw an error", () => {
         expect.assertions(1);
         const unsortedArrayWithStringValue = [
             { value: 2 },
             { value: 3 },
-            { value: '2' },
+            { value: "2" },
             { value: 4 },
             { value: 1 },
         ];
@@ -200,14 +200,14 @@ describe('sortArrayByObjectProperty', () => {
         );
     });
 
-    it('sort an array with string values', () => {
+    it("sort an array with string values", () => {
         expect.assertions(1);
         const unsortedArrayWithStringValues = [
-            { value: '2' },
-            { value: '3' },
-            { value: '2' },
-            { value: '4' },
-            { value: '1' },
+            { value: "2" },
+            { value: "3" },
+            { value: "2" },
+            { value: "4" },
+            { value: "1" },
         ];
 
         sortArrayByObjectProperty(
@@ -216,15 +216,15 @@ describe('sortArrayByObjectProperty', () => {
         );
 
         expect(unsortedArrayWithStringValues).toStrictEqual([
-            { value: '1' },
-            { value: '2' },
-            { value: '2' },
-            { value: '3' },
-            { value: '4' },
+            { value: "1" },
+            { value: "2" },
+            { value: "2" },
+            { value: "3" },
+            { value: "4" },
         ]);
     });
 
-    it('sort an array with nested values', () => {
+    it("sort an array with nested values", () => {
         expect.assertions(1);
         const unsortedArrayWithEqualValue = [
             { value: { value: 2 } },
@@ -249,7 +249,7 @@ describe('sortArrayByObjectProperty', () => {
         ]);
     });
 
-    it('sort an array with double nested values', () => {
+    it("sort an array with double nested values", () => {
         expect.assertions(1);
         const unsortedArrayWithEqualValue = [
             { value: { value: { value: 2 } } },

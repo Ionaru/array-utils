@@ -1,4 +1,4 @@
-import { Tube } from './tube.js';
+import { Tube } from "./tube.js";
 
 export class Queue<T> extends Tube<T> {
     // Aliases
@@ -10,7 +10,7 @@ export class Queue<T> extends Tube<T> {
 
     protected addFunction(value: T): void {
         if (this.isFull) {
-            throw new Error('Queue is full!');
+            throw new Error("Queue is full!");
         }
         this.tubeArray.push(value);
     }

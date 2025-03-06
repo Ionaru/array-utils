@@ -1,15 +1,15 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from "vitest";
 
-import { generateNumbersArray } from './generate-numbers-array.js';
+import { generateNumbersArray } from "./generate-numbers-array.js";
 
-describe('generateNumbersArray', () => {
+describe("generateNumbersArray", () => {
     it.each([
         [0, []],
         [1, [1]],
         [2, [1, 2]],
         [5, [1, 2, 3, 4, 5]],
         [10, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
-    ])('an array with length %p', (length, expectedResult) => {
+    ])("an array with length %p", (length, expectedResult) => {
         expect.assertions(1);
         const result = generateNumbersArray(length);
         expect(result).toStrictEqual(expectedResult);
@@ -90,7 +90,7 @@ describe('generateNumbersArray', () => {
             [5, -2, -3],
             [-2, -5, -8, -11, -14],
         ],
-    ])('an array with params %p', (parameters, expectedResult) => {
+    ])("an array with params %p", (parameters, expectedResult) => {
         expect.assertions(1);
         const result = generateNumbersArray(
             parameters[0],
@@ -100,10 +100,10 @@ describe('generateNumbersArray', () => {
         expect(result).toStrictEqual(expectedResult);
     });
 
-    it.each([-1, 1.5, Number.POSITIVE_INFINITY])('bad input: %p', (length) => {
+    it.each([-1, 1.5, Number.POSITIVE_INFINITY])("bad input: %p", (length) => {
         expect.assertions(1);
         expect(() => generateNumbersArray(length)).toThrow(
-            'Invalid array length',
+            "Invalid array length",
         );
     });
 });
