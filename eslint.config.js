@@ -9,7 +9,7 @@ import vitest from "@vitest/eslint-plugin";
 
 export default typescriptEslint.config(
     {
-        ignores: ["coverage"],
+        ignores: ["coverage", "dist", "node_modules"],
     },
     {
         files: ["src/**/*.ts"],
