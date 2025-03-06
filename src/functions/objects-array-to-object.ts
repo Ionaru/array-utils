@@ -23,8 +23,8 @@ export const objectsArrayToObject = <T>(
  */
 export const objectToObjectsArray = <T>(
     object: Record<string, T>,
-): Array<T & Record<"key", string>> => {
-    const array: Array<T & Record<"key", string>> = [];
+): (T & Record<"key", string>)[] => {
+    const array: (T & Record<"key", string>)[] = [];
 
     for (const [key, value] of Object.entries(object)) {
         array.push({ ...value, key });

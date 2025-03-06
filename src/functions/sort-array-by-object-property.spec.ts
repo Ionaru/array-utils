@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { sortArrayByObjectProperty } from "./sort-array-by-object-property.js";
 
 describe("sortArrayByObjectProperty", () => {
-    let unsortedArray: Array<{ value: number }>;
+    let unsortedArray: { value: number }[];
 
     beforeEach(() => {
         unsortedArray = [
@@ -170,14 +170,12 @@ describe("sortArrayByObjectProperty", () => {
         ];
 
         expect(() => {
-            // @ts-expect-error Should throw an error.
             sortArrayByObjectProperty(
                 unsortedArrayWithUndefinedValue,
+                // @ts-expect-error Should throw an error.
                 (element) => element.value,
             );
-        }).toThrow(
-            /^Unable to compare values '(3|undefined)' and '(3|undefined)'$/,
-        );
+        }).toThrow("Unable to compare values when one side is undefined");
     });
 
     it("attempting to sort a string value in an array must throw an error", () => {

@@ -72,18 +72,14 @@ describe("stack", () => {
     it("can stack multiple values", () => {
         expect.assertions(1);
         const stack = new Stack(3);
-        stack.push("a");
-        stack.push("b");
-        stack.push("c");
+        stack.push("a", "b", "c");
         expect(stack.tube).toHaveLength(3);
     });
 
     it("can stack multiple values when length is not defined", () => {
         expect.assertions(1);
         const stack = new Stack();
-        stack.push("a");
-        stack.push("b");
-        stack.push("c");
+        stack.push("a", "b", "c");
         expect(stack.tube).toHaveLength(3);
     });
 
@@ -138,9 +134,7 @@ describe("stack", () => {
     it("should return the last element when popping from a non-empty stack", () => {
         expect.assertions(1);
         const stack = new Stack();
-        stack.push("a");
-        stack.push("b");
-        stack.push("c");
+        stack.push("a", "b", "c");
         expect(stack.pop()).toBe("c");
     });
 
@@ -153,25 +147,21 @@ describe("stack", () => {
     it("should return the last element when peeking from a non-empty stack", () => {
         expect.assertions(1);
         const stack = new Stack();
-        stack.push("a");
-        stack.push("b");
-        stack.push("c");
+        stack.push("a", "b", "c");
         expect(stack.peek()).toBe("c");
     });
 
     it("should return the correct length", () => {
         expect.assertions(1);
         const stack = new Stack(2);
-        stack.push("a");
-        stack.push("b");
+        stack.push("a", "b");
         expect(stack).toHaveLength(2);
     });
 
     it("should clear the stack", () => {
         expect.assertions(1);
         const stack = new Stack(2);
-        stack.push("a");
-        stack.push("b");
+        stack.push("a", "b");
         stack.clear();
         expect(stack).toHaveLength(0);
     });
@@ -179,8 +169,7 @@ describe("stack", () => {
     it("lets elements exit in stack order", () => {
         expect.assertions(3);
         const stack = new Stack<number>(2);
-        stack.push(1);
-        stack.push(2);
+        stack.push(1, 2);
         expect(stack).toHaveLength(2);
         expect(stack.pop()).toBe(2);
         expect(stack.pop()).toBe(1);

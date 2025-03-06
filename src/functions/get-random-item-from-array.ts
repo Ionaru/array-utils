@@ -3,7 +3,7 @@ export const getRandomItemFromArray = <T>(array: T[], remove = false): T => {
         throw new Error("Array is empty");
     }
 
-    const index = Math.floor(Math.random() * array.length);
+    const index = crypto.getRandomValues(new Uint32Array(1))[0] % array.length;
     const item = array[index];
     if (remove) {
         array.splice(index, 1);

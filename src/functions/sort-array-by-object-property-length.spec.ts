@@ -7,7 +7,7 @@ class MyCustomClass {
 }
 
 describe("sortArrayByObjectPropertyLength", () => {
-    let unsortedArray: Array<{ value: { length: number } }>;
+    let unsortedArray: { value: { length: number } }[];
 
     beforeEach(() => {
         unsortedArray = [

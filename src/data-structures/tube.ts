@@ -36,7 +36,7 @@ export abstract class Tube<T> {
     }
 
     // These should be implemented and renamed.
-    protected abstract addFunction(value: T): void;
+    protected abstract addFunction(...value: T[]): void;
     protected abstract removeFunction(): T | undefined;
     protected abstract peekFunction(): T | undefined;
 }

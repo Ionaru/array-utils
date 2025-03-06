@@ -1,16 +1,16 @@
 type SortableProperty = string | number | Date;
 
 const checkIfEqualTypes = (
-    left: SortableProperty,
-    right: SortableProperty,
+    left?: SortableProperty,
+    right?: SortableProperty,
 ): void => {
     if (left === undefined || right === undefined) {
-        throw new Error(`Unable to compare values '${left}' and '${right}'`);
+        throw new Error(`Unable to compare values when one side is undefined`);
     }
 
     if (typeof left !== typeof right) {
         throw new TypeError(
-            `Unable to compare different types: '${left}' (${typeof left}) and '${right}' (${typeof right})`,
+            `Unable to compare different types: '${left.toString()}' (${typeof left}) and '${right.toString()}' (${typeof right})`,
         );
     }
 };

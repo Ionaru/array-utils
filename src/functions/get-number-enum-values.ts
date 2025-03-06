@@ -4,7 +4,8 @@
  */
 export const getNumberEnumKeys = <T extends object>(
     numberEnum: T,
-): Array<keyof T> =>
+): (keyof T)[] =>
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     Object.values(numberEnum).filter((x) => Number.isNaN(Number(x)));
 
 /**
@@ -13,7 +14,7 @@ export const getNumberEnumKeys = <T extends object>(
  */
 export const getNumberEnumValues = <T extends object>(
     numberEnum: T,
-): Array<T[keyof T]> =>
+): T[keyof T][] =>
     Object.values(numberEnum)
         .filter((x) => !Number.isNaN(Number(x)))
         .map((x) => Number(x) as unknown as T[keyof T]);

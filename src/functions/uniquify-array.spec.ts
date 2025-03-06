@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-identical-functions */
 import { describe, expect, it } from "vitest";
 
 import { uniquifyArray, uniquifyObjectsArray } from "./uniquify-array.js";
