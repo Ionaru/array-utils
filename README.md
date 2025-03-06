@@ -1,5 +1,6 @@
 # @ionaru/array-utils
 
+[![JSR version](https://img.shields.io/jsr/v/@ionaru/array-utils.svg?style=for-the-badge)](https://jsr.io/@ionaru/array-utils)
 [![npm version](https://img.shields.io/npm/v/@ionaru/array-utils.svg?style=for-the-badge)](https://www.npmjs.com/package/@ionaru/array-utils)
 [![npm version](https://img.shields.io/npm/v/@ionaru/array-utils/next.svg?style=for-the-badge)](https://www.npmjs.com/package/@ionaru/array-utils/v/next)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ionaru/array-utils/main.yaml?branch=master&style=for-the-badge)](https://github.com/Ionaru/array-utils/actions)
@@ -35,6 +36,10 @@ This package contains a number of strongly typed utility functions for arrays.
 
 ```
 npm install @ionaru/array-utils
+```
+
+```
+npx jsr add @ionaru/array-utils
 ```
 
 ## Usage
@@ -314,12 +319,12 @@ A typed Queue implementation.
 ```ts
 import { Queue } from "@ionaru/array-utils";
 
-new queue() = new Queue<string>(20);
+const queue = new Queue<string>(20);
 queue.enqueue("Some value");
-queue.dequeue(); // returns 'Some value' and deleted it from the queue
+queue.dequeue(); // returns 'Some value' and deletes it from the queue
 
 queue.enqueue("Another value");
-queue.enqueue("Yet another value");
+queue.enqueue("Yet another value", "Another one!");
 queue.peek(); // returns 'Some value', but does not delete it.
 ```
 
@@ -330,11 +335,11 @@ A typed Stack implementation.
 ```ts
 import { Stack } from "@ionaru/array-utils";
 
-new stack() = new Stack<string>(20);
+const stack = new Stack<string>(20);
 stack.push("Some value");
-stack.pop(); // returns 'Some value' and deleted it from the stack
+stack.pop(); // returns 'Some value' and deletes it from the stack
 
 stack.push("Another value");
-stack.push("Yet another value");
-stack.peek(); // returns 'Yet another value', but does not delete it.
+stack.push("Yet another value", "Another one!");
+stack.peek(); // returns 'Another one!', but does not delete it.
 ```

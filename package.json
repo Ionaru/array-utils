@@ -3,8 +3,12 @@
     "type": "module",
     "version": "9.0.0",
     "description": "A number of utility functions for working with arrays.",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
     "files": [
         "dist/**/*"
     ],
