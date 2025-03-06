@@ -1,0 +1,6 @@
+{
+    "name": "@ionaru/array-utils",
+    "version": "10.0.0",
+    "license": "MIT",
+    "exports": "./src/index.ts"
+}

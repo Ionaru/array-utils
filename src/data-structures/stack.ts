@@ -2,11 +2,11 @@ import { Tube } from "./tube.js";
 
 export class Stack<T> extends Tube<T> {
     // Aliases
-    public push = (...value: T[]) => {
+    public push = (...value: T[]): void => {
         this.addFunction(...value);
     };
-    public pop = () => this.removeFunction();
-    public peek = () => this.peekFunction();
+    public pop = (): T | undefined => this.removeFunction();
+    public peek = (): T | undefined => this.peekFunction();
 
     protected addFunction(...value: T[]): void {
         if (this.isFull) {
