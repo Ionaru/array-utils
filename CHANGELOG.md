@@ -7,17 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- ## [Unreleased] -->
 
+## [11.0.0] - 2025-03-07
+
+### BREAKING CHANGES
+
+- Dropped support for Node.js 18.
+
 ## [10.0.1] - 2025-03-06
 
 ### BREAKING CHANGES
 
 - Dropped support for Node.js 16.
-- Now using global crypto module for getRandomItemFromArray
+- Now using global crypto module for getRandomItemFromArray.
 
 ### Added
 
 - Support for Node.js 22.
-- Support for JSR
+- Support for JSR.
 - Support for adding multiple items in Stack.push and Queue.enqueue.
 
 ### Fixed
@@ -195,7 +201,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial code.
 - Setup for this project.
 
-[Unreleased]: https://github.com/Ionaru/array-utils/compare/10.0.1...HEAD
+[Unreleased]: https://github.com/Ionaru/array-utils/compare/11.0.0...HEAD
+[11.0.0]: https://github.com/Ionaru/array-utils/compare/10.0.1...11.0.0
 [10.0.1]: https://github.com/Ionaru/array-utils/compare/9.0.0...10.0.1
 [9.0.0]: https://github.com/Ionaru/array-utils/compare/8.0.1...9.0.0
 [8.0.1]: https://github.com/Ionaru/array-utils/compare/8.0.0...8.0.1
