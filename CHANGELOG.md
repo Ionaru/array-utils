@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- ## [Unreleased] -->
 
+## [11.0.1] - 2025-03-07
+
+### No changes
+
+- Version bump for deployment.
+
 ## [11.0.0] - 2025-03-07
 
 ### BREAKING CHANGES
@@ -201,7 +207,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial code.
 - Setup for this project.
 
-[Unreleased]: https://github.com/Ionaru/array-utils/compare/11.0.0...HEAD
+[Unreleased]: https://github.com/Ionaru/array-utils/compare/11.0.1...HEAD
+[11.0.1]: https://github.com/Ionaru/array-utils/compare/11.0.0...11.0.1
 [11.0.0]: https://github.com/Ionaru/array-utils/compare/10.0.1...11.0.0
 [10.0.1]: https://github.com/Ionaru/array-utils/compare/9.0.0...10.0.1
 [9.0.0]: https://github.com/Ionaru/array-utils/compare/8.0.1...9.0.0
