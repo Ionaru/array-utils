@@ -1,6 +1,6 @@
 # @ionaru/array-utils
 
-[![JSR version](https://img.shields.io/jsr/v/@ionaru/array-utils.svg?style=for-the-badge)](https://jsr.io/@ionaru/array-utils)
+[![JSR version](https://jsr.io/badges/@ionaru/array-utils?style=for-the-badge)](https://jsr.io/@ionaru/array-utils)
 [![npm version](https://img.shields.io/npm/v/@ionaru/array-utils.svg?style=for-the-badge)](https://www.npmjs.com/package/@ionaru/array-utils)
 [![npm version](https://img.shields.io/npm/v/@ionaru/array-utils/next.svg?style=for-the-badge)](https://www.npmjs.com/package/@ionaru/array-utils/v/next)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ionaru/array-utils/main.yaml?branch=master&style=for-the-badge)](https://github.com/Ionaru/array-utils/actions)
