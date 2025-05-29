@@ -15,6 +15,8 @@ export default typescriptEslint.config(
         files: ["src/**/*.ts"],
         extends: [
             eslint.configs.recommended,
+            eslintPluginImport.flatConfigs.recommended,
+            eslintPluginImport.flatConfigs.typescript,
             ...typescriptEslint.configs.strictTypeChecked,
             ...typescriptEslint.configs.stylisticTypeChecked,
             eslintPluginUnicorn.configs.recommended,
@@ -27,11 +29,8 @@ export default typescriptEslint.config(
                 tsconfigRootDir: import.meta.dirname,
             },
         },
-        plugins: {
-            // Needed until https://github.com/import-js/eslint-plugin-import/issues/2948 is resolved.
-            import: eslintPluginImport,
-        },
         rules: {
+            "import/no-unresolved": "off",
             "import/order": [
                 "error",
                 {
