@@ -17,5 +17,7 @@ jobs:
         with:
             node-versions: '["20", "22", "24"]'
             deploy-jsr: true
+            test-deno: true
+            test-bun: true
         secrets:
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
