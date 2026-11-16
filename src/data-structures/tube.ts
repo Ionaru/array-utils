@@ -17,7 +17,7 @@ export abstract class Tube<T> {
     }
 
     public get isFull(): boolean {
-        return this.length === this.maxLength;
+        return this.maxLength !== undefined && this.length >= this.maxLength;
     }
 
     public get length(): number {

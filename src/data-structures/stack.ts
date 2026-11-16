@@ -9,7 +9,11 @@ export class Stack<T> extends Tube<T> {
     public peek = (): T | undefined => this.peekFunction();
 
     protected addFunction(...value: T[]): void {
-        if (this.isFull) {
+        if (
+            this.isFull ||
+            (this.maxLength !== undefined &&
+                this.length + value.length > this.maxLength)
+        ) {
             throw new Error("Stack is full!");
         }
         this.tubeArray.push(...value);
