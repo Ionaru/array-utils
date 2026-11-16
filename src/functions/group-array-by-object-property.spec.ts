@@ -3,6 +3,26 @@ import { describe, expect, it } from "vitest";
 import { groupArrayByObjectProperty } from "./group-array-by-object-property.js";
 
 describe("groupArrayByObjectProperty", () => {
+    it.each(["toString", "constructor", "__proto__", "hasOwnProperty"])(
+        "groups prototype-named key %s as an own property",
+        (key) => {
+            expect.assertions(4);
+            const first = { tag: key };
+            const second = { tag: key };
+            const other = { tag: "ordinary" };
+            const result = groupArrayByObjectProperty(
+                [first, other, second],
+                (item) => item.tag,
+            );
+            expect(Object.prototype.hasOwnProperty.call(result, key)).toBe(
+                true,
+            );
+            expect(result[key]).toEqual([first, second]);
+            expect(result.ordinary).toEqual([other]);
+            expect(Object.getPrototypeOf(result)).toBe(Object.prototype);
+        },
+    );
+
     const array = [
         { a: 1, b: "2", c: "e", d: new Date(5000) },
         { a: 2, b: "0", c: "x", d: new Date(6000) },

@@ -3,6 +3,33 @@ import { describe, expect, it } from "vitest";
 import { Queue } from "./queue.js";
 
 describe("queue", () => {
+    it("rejects oversized batches without changing the contents", () => {
+        expect.assertions(6);
+        const tube = new Queue<number>(2);
+        expect(() => {
+            tube.enqueue(1, 2, 3);
+        }).toThrow("Queue is full!");
+        expect(tube.tube).toEqual([]);
+        tube.enqueue(1);
+        expect(() => {
+            tube.enqueue(2, 3);
+        }).toThrow("Queue is full!");
+        expect(tube.tube).toEqual([1]);
+        tube.enqueue(2);
+        expect(tube.isFull).toBe(true);
+        expect(tube.tube).toEqual([1, 2]);
+    });
+
+    it("allows batches that exactly fill or have no capacity limit", () => {
+        expect.assertions(3);
+        const bounded = new Queue<number>(2);
+        bounded.enqueue(1, 2);
+        expect(bounded.isFull).toBe(true);
+        const unbounded = new Queue<number>();
+        unbounded.enqueue(1, 2, 3);
+        expect(unbounded.isFull).toBe(false);
+        expect(unbounded.tube).toEqual([1, 2, 3]);
+    });
     it("has length 0 by default", () => {
         expect.assertions(2);
         const queue = new Queue();

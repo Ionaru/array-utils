@@ -15,9 +15,13 @@ export const groupArrayByObjectProperty = <
     for (const item of array) {
         const value = attributeGetter(item);
 
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-        if (!result[value]) {
-            result[value] = [];
+        if (!Object.prototype.hasOwnProperty.call(result, value)) {
+            Object.defineProperty(result, value, {
+                value: [],
+                enumerable: true,
+                writable: true,
+                configurable: true,
+            });
         }
 
         result[value].push(item);
